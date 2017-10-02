@@ -4,7 +4,9 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>io/csvFileReader.h</itemPath>
       <itemPath>io/csvFileWriter.h</itemPath>
+      <itemPath>io/fileReader.h</itemPath>
       <itemPath>io/fileWriter.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
@@ -39,7 +41,11 @@
           <standard>8</standard>
         </ccTool>
       </compileType>
+      <item path="io/csvFileReader.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="io/csvFileWriter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="io/fileReader.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="io/fileWriter.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -71,7 +77,11 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="io/csvFileReader.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="io/csvFileWriter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="io/fileReader.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="io/fileWriter.h" ex="false" tool="3" flavor2="0">
       </item>
