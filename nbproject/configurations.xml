@@ -4,10 +4,12 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>flightScheduling/Flight.h</itemPath>
       <itemPath>io/csvFileReader.h</itemPath>
       <itemPath>io/csvFileWriter.h</itemPath>
       <itemPath>io/fileReader.h</itemPath>
       <itemPath>io/fileWriter.h</itemPath>
+      <itemPath>flightScheduling/flightScheduler.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -16,6 +18,8 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>io/csvFileWriter.cpp</itemPath>
+      <itemPath>io/fileWriter.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
@@ -41,11 +45,19 @@
           <standard>8</standard>
         </ccTool>
       </compileType>
+      <item path="flightScheduling/Flight.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="flightScheduling/flightScheduler.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="io/csvFileReader.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="io/csvFileWriter.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="io/csvFileWriter.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="io/fileReader.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="io/fileWriter.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="io/fileWriter.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -77,11 +89,19 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="flightScheduling/Flight.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="flightScheduling/flightScheduler.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="io/csvFileReader.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="io/csvFileWriter.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="io/csvFileWriter.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="io/fileReader.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="io/fileWriter.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="io/fileWriter.h" ex="false" tool="3" flavor2="0">
       </item>
