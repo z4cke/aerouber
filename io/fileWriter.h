@@ -1,4 +1,3 @@
-
 /* 
  * File:   fileWriter.h
  * Author: simjoh161
@@ -15,14 +14,20 @@
 
 /**
  * Writes all elements in a vector to a file.
+ * 
+ * @path std::string with path to the file to write to.
+ * @file std::ofstream a stream to output to the file.
+ * @fileOpened true if the file is opened, false otherwise.
  */
 class fileWriter{
+protected:
     std::string path;
     std::ofstream file;
     bool fileOpened;
     
 public:
     /**
+     * A pure virtual function.
      * Prints all elements i a vector to a file of a certain type. The structure of a printing 
      * for different file types has to be implemented in a subclass for the desired file output.
      * 
