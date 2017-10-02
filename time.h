@@ -46,7 +46,7 @@ public:
 
 	}
 
-};
+
 	double getTime() 
 	{
 	/*
@@ -56,3 +56,4 @@ public:
 	*/
 
 	}
+};
