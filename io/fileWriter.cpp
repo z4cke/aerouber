@@ -15,7 +15,7 @@
  */
 bool fileWriter::openFile(std::string filePath){
     /** opens the file*/
-    file.open(filePath, std::ofstream::out);
+    file.open(filePath);
     
     /** checks if the file is opened*/
     fileOpened = file.is_open();
