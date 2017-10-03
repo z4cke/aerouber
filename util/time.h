@@ -2,58 +2,35 @@
 #ifndef TIME_H
 #define TIME_H
 
-/*
- 
- Time object is used to calculate and evaluate flight scheduling for passengers. 
-
-
+/**
+*Time object is used to calculate and evaluate flight scheduling for passengers. 
 */
 
 class time
 {
 private:
 
-/*
-
+/**
 *int h, m, s are used to store following hour, minute and seconds. 
-
 */
 	int h, m, s;
 
 public:
-	/**
-	*
 	
-	*/
-
+/**
+*Returns hour int
+*/
+	int getHour(); 
 	
-	int getHour() 
-	{
-		/*
+/**
+* Returns minute int
+*/
 
-		* Returns hour int
-
-		*/
-
-	}
-	int getMin() 
-	{
-		/*
-
-		* Returns minute int
-
-		*/
-
-	}
-
-
-	double getTime() 
-	{
-	/*
+	int getMin(); 
 	
-	* Returns the time hh:mm
-	
-	*/
+/**
+* Returns the time hh:mm
+*/
 
-	}
+	double getTime();
 };
