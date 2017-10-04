@@ -2,14 +2,14 @@
 # Use project properties -> Build -> Qt -> Expert -> Custom Definitions.
 TEMPLATE = app
 DESTDIR = dist/Debug/GNU-Linux
-TARGET = AeroUber
+TARGET = aerouber
 VERSION = 1.0.0
 CONFIG -= debug_and_release app_bundle lib_bundle
 CONFIG += debug 
 PKGCONFIG +=
 QT = core gui widgets
-SOURCES += io/csvFileWriter.cpp io/fileWriter.cpp main.cpp
-HEADERS += io/csvFileReader.h io/csvFileWriter.h io/fileReader.h io/fileWriter.h
+SOURCES += io/fileWriter.cpp main.cpp util/entity.cpp
+HEADERS += flightScheduling/Flight.h flightScheduling/flightScheduler.h io/csvFileReader.h io/csvFileWriter.h io/fileReader.h io/fileWriter.h util/entity.h
 FORMS +=
 RESOURCES +=
 TRANSLATIONS +=

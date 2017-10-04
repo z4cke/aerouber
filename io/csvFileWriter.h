@@ -8,21 +8,29 @@
 #ifndef CSVFILEWRITER_H
 #define CSVFILEWRITER_H
 #include "fileWriter.h"
+#include <sstream>
 
 /**
  * Writes all elements in a vector to a .csv file.
  */
 class csvFileWriter : public fileWriter
 {
-
     /**
-     * Prints all elements i a vector to a .csv file.
+     * Prints all values of an object to a .csv file.
      * 
-     * @param list A reference to a vector of elements that will be written to opened file.
+     * @param values A string filled with all values that should be output for one object.
      */
-    template <typename type>
-    void writeFile(std::vector<type>& list);
-
+    void printFileType(std::string& values){
+        std::istringstream iss(values);
+        std::string word;
+        while(iss >> word) {
+            /* do stuff with word */
+            file << word;
+            if(!iss.eof())
+                file << ",";
+        }
+        file << std::endl;
+    }
 };
 
 

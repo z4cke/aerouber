@@ -7,6 +7,7 @@
       <itemPath>flightScheduling/Flight.h</itemPath>
       <itemPath>io/csvFileReader.h</itemPath>
       <itemPath>io/csvFileWriter.h</itemPath>
+      <itemPath>util/entity.h</itemPath>
       <itemPath>io/fileReader.h</itemPath>
       <itemPath>io/fileWriter.h</itemPath>
       <itemPath>flightScheduling/flightScheduler.h</itemPath>
@@ -19,6 +20,7 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>io/csvFileWriter.cpp</itemPath>
+      <itemPath>util/entity.cpp</itemPath>
       <itemPath>io/fileWriter.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
@@ -63,6 +65,10 @@
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="util/entity.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="util/entity.h" ex="false" tool="3" flavor2="0">
+      </item>
     </conf>
     <conf name="Release" type="4">
       <toolsSet>
@@ -106,6 +112,10 @@
       <item path="io/fileWriter.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="util/entity.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="util/entity.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
   </confs>

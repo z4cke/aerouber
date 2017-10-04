@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=GNU-Linux
 CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-Linux
-CND_ARTIFACT_NAME_Debug=AeroUber
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux/AeroUber
+CND_ARTIFACT_NAME_Debug=aerouber
+CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux/aerouber
 CND_PACKAGE_DIR_Debug=dist/Debug/GNU-Linux/package
-CND_PACKAGE_NAME_Debug=AeroUber.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux/package/AeroUber.tar
+CND_PACKAGE_NAME_Debug=aerouber.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux/package/aerouber.tar
 # Release configuration
 CND_PLATFORM_Release=GNU-Linux
 CND_ARTIFACT_DIR_Release=dist/Release/GNU-Linux
-CND_ARTIFACT_NAME_Release=AeroUber
-CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux/AeroUber
+CND_ARTIFACT_NAME_Release=aerouber
+CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux/aerouber
 CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux/package
-CND_PACKAGE_NAME_Release=AeroUber.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/AeroUber.tar
+CND_PACKAGE_NAME_Release=aerouber.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/aerouber.tar
 #
 # include compiler specific variables
 #
