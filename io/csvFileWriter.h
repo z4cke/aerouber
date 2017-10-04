@@ -20,17 +20,7 @@ class csvFileWriter : public fileWriter
      * 
      * @param values A string filled with all values that should be output for one object.
      */
-    void printFileType(std::string& values){
-        std::istringstream iss(values);
-        std::string word;
-        while(iss >> word) {
-            /* do stuff with word */
-            file << word;
-            if(!iss.eof())
-                file << ",";
-        }
-        file << std::endl;
-    }
+    void printFileType(std::string& values);
 };
 
 
