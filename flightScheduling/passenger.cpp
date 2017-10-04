@@ -12,11 +12,11 @@ int Passenger::getID(){
 }
 
 int Passenger::getDestination(){
-    return Passenger.Dstination;   
+    return Passenger.Destination;   
 }
 
 int Passenger::getCurrentLocation(){
-    return Passenger.Destination;   
+    return Passenger.currentLocation;   
 }
 
 int Passenger::getRTA(){
