@@ -36,12 +36,12 @@ public:
 	* Caucluates the distance between two airports depending on which aircraft is being used due to the difference
 	* in cruising altitude between different aircraft.
 	*/
-	double calculateDistance(Airport Origin, Airport Destination, Aircraft Aircraft);
+	double calculateDistance(Airport &Origin, Airport &Destination, Aircraft &Aircraft);
         
         
         /* Takes the distance and aircraft speed to calculate the time it takes to reach the destination
          */
-	time calcuateTime(double distance, Aircraft Aircraft);
+	time calcuateTime(double distance, Aircraft &Aircraft);
 
 	std::vector<Flight> getFlights() {
 		return scheduledFlights;
