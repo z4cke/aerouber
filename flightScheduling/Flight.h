@@ -16,11 +16,13 @@
 #include <iostream>
 #include <iomanip>
 #include <string.h>
+#include "../util/time.h"
+
 
 class Flight {
 private:
-	//Time departureTime;
-	//Time arrivalTime;
+	time * departureTime;
+	time * arrivalTime;
 	std::string departureAirport;
 	std::string arrivalAirport;
 	int FlightNumber;
