@@ -5,7 +5,6 @@
  */
 
 #include "flightScheduler.h"
-#include "Time.h"
 #include <math.h>
 
 void FlightScheduler::startScheduleFlights
