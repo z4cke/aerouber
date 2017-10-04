@@ -14,10 +14,10 @@ void FlightScheduler::startScheduleFlights
 }
 
 double FlightScheduler::calculateDistance(Airport &Origin, Airport &Destination, Aircraft &Aircraft){
-    double φ1 = (Origin.latitide * M_PI)/180;
-    double λ1 = (Origin.longitude * M_PI)/180;;
-    double φ2 = (Destination.latitude * M_PI)/180;;
-    double λ2 = (Destination.longitute * M_PI)/180;;
+    double φ1 = (Origin->getLat() * M_PI)/180;
+    double λ1 = (Origin->getLon() * M_PI)/180;;
+    double φ2 = (Destination->getLat() * M_PI)/180;;
+    double λ2 = (Destination->getLon() * M_PI)/180;;
     double rad = 6371000 + Aircraft.fleet.CruisingHeight*1000;
     
     double Δφ = φ1 - φ2;
@@ -38,11 +38,11 @@ double FlightScheduler::calculateDistance(Airport &Origin, Airport &Destination,
     return distance; //in meters
 }
 
-Time FlightScheduler::calculateTime (double distance, Aircraft Aircraft){
+time FlightScheduler::calculateTime (double distance, Aircraft &Aircraft){
     int speed = Aircraft.fleet.Speed;
     distance = distance / 1000; //Conversion to from M to KM
-    double time = speed / distance;
-    Time hoho(Time); //<-- CONVERSION
+    double timmar = speed / distance;
+    time hoho(timmar); //<-- Constructor
     
     return hoho;
     
