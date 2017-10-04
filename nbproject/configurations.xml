@@ -42,7 +42,7 @@
       </qt>
       <compileType>
         <ccTool>
-          <standard>8</standard>
+          <standard>11</standard>
         </ccTool>
       </compileType>
       <item path="flightScheduling/Flight.h" ex="false" tool="3" flavor2="0">

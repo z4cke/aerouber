@@ -19,8 +19,8 @@
 
 class Flight {
 private:
-	Time departureTime;
-	Time arrivalTime;
+	//Time departureTime;
+	//Time arrivalTime;
 	std::string departureAirport;
 	std::string arrivalAirport;
 	int FlightNumber;
