@@ -1,4 +1,3 @@
-#pragma once
 #ifndef TIME_H
 #define TIME_H
 
@@ -34,3 +33,4 @@ public:
 
 	double getTime();
 };
+#endif
