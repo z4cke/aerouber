@@ -34,7 +34,7 @@ public:
      * @param list A reference to a vector of elements that will be written to opened file.
      */
     template <typename type>
-    virtual void writeFile(std::vector<type>& list) = 0;
+    void writeFile(std::vector<type>& list);
     
     /**
      * Opens a the file to write to at specified path.
