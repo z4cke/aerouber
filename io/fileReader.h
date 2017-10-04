@@ -10,6 +10,7 @@
 #include <fstream>
 #include <vector>
 #include <string>
+#include <iostream>
 
 /*
  * fileReader is a object that stores the path, stream and a bool var for the
@@ -26,6 +27,7 @@ protected:
     std::string path;
     std::ifstream file;
     bool fileOpened;
+    virtual std::string readFileType(std::string& line) = 0;
 public:
     template <typename type>
     /*
@@ -33,7 +35,16 @@ public:
      * @param reference to the vector 
      * return
      */
-    virtual void readFile(std::vector<type>& list)=0;
+    void readFile(std::vector<type>& list){
+    std::string rad;
+    if(fileOpened = true){
+        while(getline(file,rad)){
+            //std::cout<<readFileType(rad)<<std::endl;
+            list.emplace_back(readFileType(rad));
+        }
+    }
+    }
+    
     /*
      * function closeFile
      * Closes the opened file
