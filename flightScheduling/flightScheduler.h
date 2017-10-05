@@ -15,7 +15,8 @@
 #define FLIGHTSCHEDULER_H
 
 #include "Flight.h"
-#include "../airport.h"
+#include "airport.h"
+#include "passenger.cpp"
 #include <vector>
 #include <iostream>
 #include <iomanip>
