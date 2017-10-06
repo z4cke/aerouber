@@ -31,9 +31,41 @@ private:
     int zone; /**The timezone the airport is in*/
     char dst; /**If the airport is subjected to Daylight Savings Time, if then which*/
     std::string tz; /** Timezone in (Olson) format, eg. "America/Los_Angeles"*/
-    airportType type; /**Type of communicationcenter: Airport, trainstation etc.*/
+    airportType type; /**Type of communication center: Airport, trainstation etc.*/
     std::string source; /**The source of the airport data, for example "OurAirports"*/
+    
 public:
+    Airport(int ID, std::string name, std::string city, std::string country, std::string iata, std::string icao, double lat, double lon, int alt, int zone, char dst, std::string tz, airportType type, std::string source):
+    ID(ID), name(name), city(city), country(country), iata(iata), icao(icao), lat(lat), lon(lon), alt(alt), zone(zone), dst(dst), tz(tz), type(type), source(source)
+    {};
+    
+    /**
+     * Creates airport string
+     * 
+     * In each string it separates each value with a blank space
+     * 
+     * @return 
+     */
+    Airport(std::string line){
+    std::istringstream ss(line);
+        
+        ss>>ID;
+        ss>>city;
+        ss>>country;
+        ss>>iata;
+        ss>>icao;
+        ss>>lat;
+        ss>>lon;
+        ss>>alt;
+        ss>>zone;
+        ss>>dst;
+        ss>>tz;
+        ss>>type;
+        ss>>source;
+        std::cout<<"entity: "<<line<<std::endl;
+//        std::cout<<"Created Entity"<<std::endl;
+    }
+       
     /**
      *  
      * @return the airport ID
