@@ -24,6 +24,11 @@ private:
     std::string CurrentLocation;
     fleet &AircraftModel;
 public:
+    /*
+     SAKNAR CONSTRUCTORS
+     */
+    
+    
     int getID();
     std::string getModel();
     int getSeats();

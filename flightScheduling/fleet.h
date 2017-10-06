@@ -22,6 +22,10 @@ private:
     int CruisingSpeed;
     int CruisingHeight;
 public:
+    /*
+     SAKNAR CONSTRUCTORS
+     */
+    
     std::string getAircraftModel();
     int getinService();
     int getPassengerCapacity();

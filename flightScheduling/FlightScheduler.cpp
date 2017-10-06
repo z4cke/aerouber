@@ -44,7 +44,7 @@ time FlightScheduler::calculateTime (double distance, aircraft &Aircraft){
     int speed = Aircraft.getFleet().getSpeed();
     distance = distance / 1000; //Conversion to from M to KM
     double timmar = speed / distance;
-    double sekunder = timmar/360;
+    double sekunder = timmar*360;
     time hoho(sekunder); //<-- Constructor
     
     return hoho;
