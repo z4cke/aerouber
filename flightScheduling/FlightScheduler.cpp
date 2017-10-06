@@ -20,7 +20,7 @@ double FlightScheduler::calculateDistance(Airport &Origin, Airport &Destination,
     double B1 = (Origin->getLon() * M_PI)/180;
     double A2 = (Destination->getLat() * M_PI)/180;
     double B2 = (Destination->getLon() * M_PI)/180;
-       double rad = 637100000 + Aircraft.getFleet().getHeight();
+       double rad = 637100 + Aircraft.getFleet().getHeight();
     
     double deltaA = A1 - A2;
     double deltaB = B1 - B2;
@@ -37,14 +37,15 @@ double FlightScheduler::calculateDistance(Airport &Origin, Airport &Destination,
     double distance = rad * c;
     
     
-    return distance; //in meters
+    return distance; //in kilometers
 }
 
-time FlightScheduler::calculateTime (double distance, Aircraft &Aircraft){
-    int speed = Aircraft.fleet.Speed;
+time FlightScheduler::calculateTime (double distance, aircraft &Aircraft){
+    int speed = Aircraft.getFleet().getSpeed();
     distance = distance / 1000; //Conversion to from M to KM
     double timmar = speed / distance;
-    time hoho(timmar); //<-- Constructor
+    double sekunder = timmar/360;
+    time hoho(sekunder); //<-- Constructor
     
     return hoho;
     

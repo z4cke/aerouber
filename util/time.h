@@ -15,6 +15,16 @@ private:
 	int h, m, s;
 
 public:
+    //default constructor
+    time();
+    
+    
+    //Non-default constructor (TAR BARA IN SEKUNDER)
+    time(double sec);
+    
+    time setTime(int hour, int min, int sec);
+    
+    time CompareTime(time one, time two);
 	
 /**
 *Returns hour int
@@ -27,10 +37,6 @@ public:
 
 	int getMin(); 
 	
-/**
-* Returns the time hh:mm
-*/
 
-	double getTime();
 };
 #endif
