@@ -22,11 +22,12 @@ private:
     int CruisingSpeed;
     int CruisingHeight;
 public:
-    getAircraftModel();
-    getinService();
-    getMaxRange();
-    getSpeed();
-    getHeight();
+    std::string getAircraftModel();
+    int getinService();
+    int getPassengerCapacity();
+    int getMaxRange();
+    int getSpeed();
+    int getHeight();
 };
 
 

@@ -6,6 +6,7 @@
 
 #include "flightScheduler.h"
 #include "airport.h"
+#include "aircraft.h"
 #include <math.h>
 
 void FlightScheduler::startScheduleFlights
@@ -14,12 +15,12 @@ void FlightScheduler::startScheduleFlights
 
 }
 
-double FlightScheduler::calculateDistance(Airport &Origin, Airport &Destination, Aircraft &Aircraft){
+double FlightScheduler::calculateDistance(Airport &Origin, Airport &Destination, aircraft &Aircraft){
     double A1 = (Origin->getLat() * M_PI)/180;
     double B1 = (Origin->getLon() * M_PI)/180;;
     double A2 = (Destination->getLat() * M_PI)/180;;
     double B2 = (Destination->getLon() * M_PI)/180;;
-    double rad = 637100 + ;
+    double rad = 637100 + Aircraft;
     
     double deltaA = A1 - A2;
     double deltaB = B1 - B2;

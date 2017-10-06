@@ -11,6 +11,7 @@
  * Created on den 6 oktober 2017, 10:27
  */
 #include "fleet.h"
+#include <vector>
 #ifndef AIRCRAFT_H
 #define AIRCRAFT_H
 
@@ -27,7 +28,6 @@ public:
     std::string getModel();
     int getSeats();
     std::string getCurrentLocation;
-    
     fleet& getFleet();
     
     void connectAircraftToFleet(std::vector<aircraft> &aircrafts, std::vector<fleet> &fleet);
