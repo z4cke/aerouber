@@ -23,14 +23,24 @@ class AeroUber{
         std::vector<Fleet> fleetList;
         std::vector<Aircraft> aircraftList;
         std::vector<Airport> airportList;
+        aeroGUI gui;
+        FlightScheduler scheduler;
     public:
+        /**
+         *   
+         * Non-default constructor for creating AeroUber and start
+         * opening csvFiles, filling the lists with passenger information and
+         * start scheduling. 
+         */
+        
+        AeroUber();
         
         /**
         * 
         * A function to start the scheduler.
         */
         void startScheduler();
-        
+private:    
         /**
         * 
         * A function to load the files. 
