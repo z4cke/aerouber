@@ -34,7 +34,7 @@ double FlightScheduler::calculateDistance(Airport &Origin, Airport &Destination,
     
     double a = sin(deltaA/2) * sin(deltaA/2) * cos(A1) * cos(A2) * sin(deltaB/2) * sin(deltaB/2);
     double c = 2 * atan2(sqrt(a),sqrt(1-a));
-    double distance = rad * c;
+    double distance = rad * c/1000;
     
     
     return distance; //in kilometers
