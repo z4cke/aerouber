@@ -22,4 +22,6 @@ int fleet::getMaxRange(){
 int fleet::getSpeed(){
     return CruisingSpeed;
 }
-int getHeight();
+int fleet::getHeight(){
+    return CruisingHeight;
+}
