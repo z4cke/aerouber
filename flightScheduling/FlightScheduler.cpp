@@ -17,9 +17,9 @@ void FlightScheduler::startScheduleFlights
 
 double FlightScheduler::calculateDistance(Airport &Origin, Airport &Destination, aircraft &Aircraft){
     double A1 = (Origin->getLat() * M_PI)/180;
-    double B1 = (Origin->getLon() * M_PI)/180;;
-    double A2 = (Destination->getLat() * M_PI)/180;;
-    double B2 = (Destination->getLon() * M_PI)/180;;
+    double B1 = (Origin->getLon() * M_PI)/180;
+    double A2 = (Destination->getLat() * M_PI)/180;
+    double B2 = (Destination->getLon() * M_PI)/180;
        double rad = 637100000 + Aircraft.getFleet().getHeight();
     
     double deltaA = A1 - A2;
