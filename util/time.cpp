@@ -12,17 +12,19 @@ time::time(){
     h=m=s=0;
 }
 
-time::time(double sec){
+time::time(int sec){ //ND constructor (tar in sekunder)
+    int h,m,s;
     h = 0;
-    m = 0
+    m = 0;
     s = sec;
-    s = (s + 1) % 60;
-	if (s == 0)
-	{
-		m = (m + 1) % 60;
-		if(m == 0)
-			h = (h + 1) % 24;
-	}
+    while (s > 59){
+        s = s - 60;
+        m = m + 1;
+        if(m > 59){
+            m = m - 60;
+            h = h + 1;
+        }
+    }
 }
 
 time time::CompareTime(time &one, time &two){
