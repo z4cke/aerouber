@@ -5,6 +5,7 @@
  */
 
 #include "flightScheduler.h"
+#include "airport.h"
 #include <math.h>
 
 void FlightScheduler::startScheduleFlights
@@ -14,23 +15,28 @@ void FlightScheduler::startScheduleFlights
 }
 
 double FlightScheduler::calculateDistance(Airport &Origin, Airport &Destination, Aircraft &Aircraft){
-    double φ1 = (Origin->getLat() * M_PI)/180;
-    double λ1 = (Origin->getLon() * M_PI)/180;;
-    double φ2 = (Destination->getLat() * M_PI)/180;;
-    double λ2 = (Destination->getLon() * M_PI)/180;;
-    double rad = 6371000 + Aircraft.fleet.CruisingHeight*1000;
+    double A1 = (Origin->getLat() * M_PI)/180;
+    double B1 = (Origin->getLon() * M_PI)/180;;
+    double A2 = (Destination->getLat() * M_PI)/180;;
+    double B2 = (Destination->getLon() * M_PI)/180;;
+
+    double A1 = (OriginLat * M_PI)/180;
+    double B1 = (OriginLon * M_PI)/180;;
+    double A2 = (Destinationlat* M_PI)/180;;
+    double B2 = (Destinationlon * M_PI)/180;;
+    double rad = 637100;
     
-    double Δφ = φ1 - φ2;
-    double Δλ = λ1 - λ2;
+    double deltaA = A1 - A2;
+    double deltaB = B1 - B2;
     
-    if (Δφ < 0){
-        Δφ = -Δφ;
+    if (deltaA < 0){
+        deltaA = -deltaA;
     }
-    if (Δλ < 0){
-        Δλ = -Δλ;
+    if (deltaB < 0){
+        deltaB = -deltaB;
     }
     
-    double a = sin(Δφ/2)^2 * cos(φ1) * cos(φ2) * sin(Δλ/2)^2;
+    double a = sin(deltaA/2) * sin(deltaA/2) * cos(A1) * cos(A2) * sin(deltaB/2) * sin(deltaB/2);
     double c = 2 * atan2(sqrt(a),sqrt(1-a));
     double distance = rad * c;
     
