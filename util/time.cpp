@@ -27,12 +27,11 @@ time::time(int sec){ //ND constructor (tar in sekunder)
     }
 }
 
-time time::CompareTime(time &one, time &two){
+time time::CompareTime(time &one){
+    time comparedtime(0);
     
-    time comparedtime;
-    
-    int timma = one.h - two.h;
-    int minut = one.m - two.m;
+    int timma = h - one.h;
+    int minut = m - one.m ;
     
     if(timma < 0){timma = -timma;}
     if(minut < 0){minut = -minut;}
@@ -40,13 +39,14 @@ time time::CompareTime(time &one, time &two){
     comparedtime.m = minut;
     return comparedtime;
 }
+}
 
 int time::getHour(){
     return h;
 }
 
 int time::getMin(){
-return m;
+    return m;
 }
 
 
