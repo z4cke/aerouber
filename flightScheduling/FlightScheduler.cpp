@@ -27,6 +27,9 @@ void FlightScheduler::startScheduleFlights
                 tempPassenger.setID(Flightlist[i].FlightNumber);
             }
         }
+        if((i + 1) = Flightlist.size()){
+        }
+        
         
     }
 }
