@@ -34,9 +34,7 @@ public:
         ss>>CruisingSpeed;
         ss>>CruisingHeight;
     }
-    /*
-     SAKNAR CONSTRUCTORS
-     */
+
     
     std::string getAircraftModel();
     int getinService();
