@@ -5,12 +5,10 @@
  */
 
 #include "flightScheduler.h"
-#include "airport.h"
-#include "aircraft.h"
 #include <math.h>
 
 void FlightScheduler::startScheduleFlights
-(std::vector<passenger>& Passengers, std::vector<aircraft>& Aircraft, std::vector<airport>& Airports){
+(std::vector<Passenger>& Passengers, std::vector<aircraft>& Aircraft, std::vector<Airport>& Airports){
 
 
 }
