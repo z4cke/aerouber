@@ -16,6 +16,7 @@
 
 #include "io/csvFileWriter.h"
 #include "util/entity.h"
+#include "graphics/aeroGUI.h"
 
 int main(int argc, char *argv[]) {
     // initialize resources, if needed
@@ -40,6 +41,9 @@ int main(int argc, char *argv[]) {
     
     QApplication app(argc, argv);
 
+    aeroGUI gui;
+    gui.openGUI();
+    
     csvFileWriter w;
     w.openFile("test.csv");
     w.writeFile(v);
