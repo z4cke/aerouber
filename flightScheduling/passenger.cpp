@@ -8,22 +8,22 @@
 #include "passenger.h"
 
 int Passenger::getID(){
-    return Passenger.ID;   
+    return ID;   
 }
 
-int Passenger::getDestination(){
-    return Passenger.Destination;   
+std::string Passenger::getDestination(){
+    return Destination;   
 }
 
 int Passenger::getCurrentLocation(){
-    return Passenger.currentLocation;   
+    return currentLocation;   
 }
 
 std::string Passenger::getRTA(){
-    return Passenger.RTA;   
+    return RTA;   
 }
 
 void Passenger::setID(int flightID){
-    Passenger.ID = flightID;
+    ID = flightID;
     
 }

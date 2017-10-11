@@ -8,7 +8,7 @@
 #ifndef CSVFILEREADER_H
 #define CSVFILEREADER_H
 #include "fileReader.h"
-#include "entity.h"
+#include "../util/entity.h"
 /*
  * Inherit from the the parent class FileReader. Stores the data and sorts them into created vector.
  */

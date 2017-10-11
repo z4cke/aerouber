@@ -27,13 +27,17 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>flightScheduling/Flight.cpp</itemPath>
       <itemPath>graphics/aeroForm.cpp</itemPath>
       <itemPath>graphics/aeroGUI.cpp</itemPath>
+      <itemPath>flightScheduling/airport.cpp</itemPath>
+      <itemPath>io/csvFileReader.cpp</itemPath>
       <itemPath>io/csvFileWriter.cpp</itemPath>
       <itemPath>util/entity.cpp</itemPath>
       <itemPath>io/fileWriter.cpp</itemPath>
       <itemPath>flightScheduling/fleet.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
+      <itemPath>flightScheduling/passenger.cpp</itemPath>
       <itemPath>util/time.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
@@ -59,9 +63,13 @@
           <standard>11</standard>
         </ccTool>
       </compileType>
+      <item path="flightScheduling/Flight.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="flightScheduling/Flight.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="flightScheduling/aircraft.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="flightScheduling/airport.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="flightScheduling/airport.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -70,6 +78,8 @@
       <item path="flightScheduling/fleet.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="flightScheduling/flightScheduler.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="flightScheduling/passenger.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="flightScheduling/passenger.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -82,6 +92,8 @@
       <item path="graphics/aeroGUI.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="graphics/aeroGUI.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="io/csvFileReader.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="io/csvFileReader.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -131,9 +143,13 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="flightScheduling/Flight.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="flightScheduling/Flight.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="flightScheduling/aircraft.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="flightScheduling/airport.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="flightScheduling/airport.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -142,6 +158,8 @@
       <item path="flightScheduling/fleet.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="flightScheduling/flightScheduler.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="flightScheduling/passenger.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="flightScheduling/passenger.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -154,6 +172,8 @@
       <item path="graphics/aeroGUI.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="graphics/aeroGUI.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="io/csvFileReader.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="io/csvFileReader.h" ex="false" tool="3" flavor2="0">
       </item>

@@ -59,7 +59,7 @@ std::string Airport::getTz() {
     return tz;
 }
 
-airportType Airport::getType() {
+Airport::airportType Airport::getType() {
     return type;
 }
 

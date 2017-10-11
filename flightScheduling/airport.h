@@ -14,7 +14,8 @@
 #ifndef AIRPORT_H
 #define AIRPORT_H
 
-
+#include <string>
+#include <sstream>
 
 
 class Airport {
@@ -49,7 +50,7 @@ public:
      * @return 
      */
         Airport(std::string line){
-    std::istringstream ss(line);
+        std::istringstream ss(line);
         
         ss>>ID;
         ss>>city;

@@ -5,7 +5,7 @@
 *Time object is used to calculate and evaluate flight scheduling for passengers. 
 */
 
-class time
+class time2
 {
 private:
 
@@ -16,15 +16,15 @@ private:
 
 public:
     //default constructor
-    time();
+    time2();
     
     
     //Non-default constructor (TAR BARA IN SEKUNDER)
-    time(double sec);
+    time2(double sec);
     
-    time setTime(int hour, int min, int sec);
+    time2 setTime(int hour, int min, int sec);
     
-    time CompareTime(time& tajm);
+    time2 CompareTime(time2& tajm);
 	
 /**
 *Returns hour int

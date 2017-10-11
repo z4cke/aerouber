@@ -42,7 +42,7 @@ public:
      * 
      * @Returns the Destination.
      */
-    int getDestination();
+    std::string getDestination();
 
     /**
      * 
@@ -56,7 +56,7 @@ public:
      */
     std::string getRTA();
     
-    int setID(int flightID);
+    void setID(int flightID);
 };
 
 #endif /* PASSENGER_H */

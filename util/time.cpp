@@ -8,11 +8,11 @@
 
 
 //Default constructor
-time::time(){
+time2::time2(){
     h=m=s=0;
 }
 
-time::time(double sec){ //ND constructor (tar in sekunder)
+time2::time2(double sec){ //ND constructor (tar in sekunder)
     int h,m,s;
     h = 0;
     m = 0;
@@ -27,8 +27,8 @@ time::time(double sec){ //ND constructor (tar in sekunder)
     }
 }
 
-time time::CompareTime(time &one){
-    time comparedtime(0);
+time2 time2::CompareTime(time2 &one){
+    time2 comparedtime(0);
     
     int timma = h - one.h;
     int minut = m - one.m ;
@@ -40,19 +40,19 @@ time time::CompareTime(time &one){
     return comparedtime;
 }
 
-int time::getHour(){
+int time2::getHour(){
     return h;
 }
 
-int time::getMin(){
+int time2::getMin(){
     return m;
 }
 
-void time::setHour(int hh){
+void time2::setHour(int hh){
     h = hh;
 }
 
-void time::setMin(int mm){
+void time2::setMin(int mm){
     m = mm;
 }
 

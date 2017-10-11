@@ -9,26 +9,29 @@
 
 
 
-void Flight::PrintFlight(){
-
+std::string Flight::PrintFlight(){
+    return "FLIGHT";
 }
 
 
 Flight::Flight(){
-    Flight.FlightNumber = NULL;
-    Flight.PassengerCount = NULL;
-    Flight.arrivalAirport = NULL;
-    Flight.arrivalTime = NULL;
-    Flight.departureAirport = NULL;
-    Flight.departureTime = NULL;
+    FlightNumber = 0;
+    PassengerCount = 0;/*
+    arrivalAirport;
+    arrivalTime;
+    departureAirport;
+    departureTime;
+    */
 }
         
 //Non-default constructor
-Flight::Flight(int ID, int PassengerCount std::string aA time aT, std::string dA,time dT ){
-    Flight.FlightNumber = ID;
-    Flight.PassengerCount = PassengerCount;
-    Flight.arrivalAirport = aA;
-    Flight.arrivalTime = aT;
-    Flight.departureAirport = dA;
-    Flight.departureTime = dT;
+Flight::Flight(time2 dT, time2 aT, std::string dA, std::string aA, int ID, int PassengerCount){
+    FlightNumber = ID;
+    this->PassengerCount = PassengerCount;
+    /*
+    arrivalAirport = aA;
+    arrivalTime = aT;
+    departureAirport = dA;
+    departureTime = dT;
+     */
 }
