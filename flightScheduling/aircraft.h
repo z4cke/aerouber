@@ -19,7 +19,7 @@
 class aircraft{
 private:
     int ID = 0;
-    std::string Model;
+    std::string Model = "";
     int Seats = 0;
     std::string CurrentLocation = "";
     fleet *AircraftModel;
@@ -27,7 +27,7 @@ public:
     
     
 //Non-default constructor
-aircraft(int losID, std::string losModelos, int losSeatos, std::string CL, fleet &losAircraftosModelos);
+aircraft(int losID, std::string losModelos, int losSeatos, std::string CL, fleet *losAircraftosModelos);
 
 aircraft(std::string values){
     std::istringstream ss(values);
@@ -52,7 +52,7 @@ aircraft& operator=(const aircraft& other);
     int getID();
     std::string getModel();
     int getSeats();
-    std::string getCurrentLocation;
+    std::string getCurrentLocation();
     fleet& getFleet();
     
     void connectAircraftToFleet(std::vector<aircraft> &aircrafts, std::vector<fleet> &fleet);

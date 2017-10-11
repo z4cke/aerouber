@@ -6,16 +6,16 @@
 
 #include "aircraft.h"
 //Default constructor
-aircraft::aircraft(){
+/*aircraft::aircraft(){
     ID = NULL;
     Model = NULL;
     Seats = NULL;
     CurrentLocation = NULL;
     AircraftModel = NULL;
-}
+}*/
     
 //Non-default constructor
-aircarft::aircraft(int i, std::string m, int s, std::string c, fleet &am){
+aircraft::aircraft(int i, std::string m, int s, std::string c, fleet *am){
     ID = i;
     Model = m;
     Seats = s;
@@ -29,19 +29,20 @@ aircraft::aircraft(const aircraft& other){
 }
     
 //Copy-assignment constructor
-aircraft::aircraft& operator=(const aircraft& other){
+aircraft& aircraft::operator=(const aircraft& other){
     return *this;
 }
     
 //Destructor
-~aircraft(){
+aircraft::~aircraft(){
+    
 }
 
-int getID();
-std::string getModel();
-int getSeats();
-std::string getCurrentLocation;
+int aircraft::getID(){return ID;}
+std::string aircraft::getModel(){return Model;}
+int aircraft::getSeats(){return Seats;}
+std::string aircraft::getCurrentLocation(){return CurrentLocation;}
     
-fleet& getFleet();
+fleet& aircraft::getFleet(){}
     
-void connectAircraftToFleet(std::vector<aircraft> &aircrafts, std::vector<fleet> &fleet);
+void aircraft::connectAircraftToFleet(std::vector<aircraft> &aircrafts, std::vector<fleet> &fleet){}

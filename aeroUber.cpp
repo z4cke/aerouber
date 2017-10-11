@@ -10,6 +10,7 @@
 #define outputFile "output.csv"
 
 #include "aeroUber.h"
+#include <string>
 
 AeroUber::AeroUber(){
     
@@ -20,12 +21,12 @@ AeroUber::AeroUber(){
 
 void AeroUber::startScheduler(){
     loadPassengerRequests();
-    scheduler.startScheduleFlights(passengerList, aircraftList, airportList);
+    //scheduler.startScheduleFlights(passengerList, aircraftList, airportList);
     
     csvFileWriter writer;
     
     writer.openFile(outputFile);
-    writer.writeFile(scheduler.getFlights());
+    //writer.writeFile(scheduler.getFlights());
     writer.closeFile();
     
 }

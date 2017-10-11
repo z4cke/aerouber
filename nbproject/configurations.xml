@@ -29,14 +29,15 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>flightScheduling/Flight.cpp</itemPath>
-      <itemPath>flightScheduling/FlightScheduler.cpp</itemPath>
       <itemPath>graphics/aeroForm.cpp</itemPath>
       <itemPath>graphics/aeroGUI.cpp</itemPath>
       <itemPath>aeroUber.cpp</itemPath>
+      <itemPath>flightScheduling/aircraft.cpp</itemPath>
       <itemPath>flightScheduling/airport.cpp</itemPath>
       <itemPath>io/csvFileReader.cpp</itemPath>
       <itemPath>io/csvFileWriter.cpp</itemPath>
       <itemPath>util/entity.cpp</itemPath>
+      <itemPath>io/fileReader.cpp</itemPath>
       <itemPath>io/fileWriter.cpp</itemPath>
       <itemPath>flightScheduling/fleet.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
@@ -74,10 +75,7 @@
       </item>
       <item path="flightScheduling/Flight.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="flightScheduling/FlightScheduler.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="flightScheduling/aircraft.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="flightScheduling/aircraft.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -112,6 +110,8 @@
       <item path="io/csvFileWriter.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="io/csvFileWriter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="io/fileReader.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="io/fileReader.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -163,10 +163,7 @@
       </item>
       <item path="flightScheduling/Flight.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="flightScheduling/FlightScheduler.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="flightScheduling/aircraft.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="flightScheduling/aircraft.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -201,6 +198,8 @@
       <item path="io/csvFileWriter.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="io/csvFileWriter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="io/fileReader.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="io/fileReader.h" ex="false" tool="3" flavor2="0">
       </item>

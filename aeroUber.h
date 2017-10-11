@@ -16,7 +16,9 @@
 #include <vector>
 #include "io/csvFileWriter.h"
 #include "io/csvFileReader.h"
-#include "flightScheduling/flightScheduler.h"
+//#include "flightScheduling/flightScheduler.h"
+#include "flightScheduling/aircraft.h"
+#include "flightScheduling/airport.h"
 #include "flightScheduling/passenger.h"
 #include "flightScheduling/Flight.h"
 #include "flightScheduling/fleet.h"
@@ -31,7 +33,7 @@ class AeroUber{
         std::vector<aircraft> aircraftList;
         std::vector<Airport> airportList;
         aeroGUI gui;
-        FlightScheduler scheduler;
+        //FlightScheduler scheduler;
     public:
         /**
          *   
