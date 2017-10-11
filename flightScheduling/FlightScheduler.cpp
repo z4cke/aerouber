@@ -24,6 +24,7 @@ void FlightScheduler::startScheduleFlights
             std::string forigin = Flightlist[i].departureAirport;
             std::string fdestination = Flightlist[i].arrivalAirport;
             if(forigin == origin && fdestination == destination){
+                tempPassenger.setID(Flightlist[i].FlightNumber);
             }
         }
         
