@@ -7,6 +7,7 @@
 #include "flightScheduler.h"
 #include <math.h>
 #include <vector>
+#include <string>
 
 void FlightScheduler::startScheduleFlights
 (std::vector<Passenger> Passengers, std::vector<aircraft> Aircraft, std::vector<Airport> Airports){
@@ -21,8 +22,8 @@ void FlightScheduler::startScheduleFlights
         std::string origin = tempPassenger.getCurrentLocation();
         std::string destination = tempPassenger.getDestination();
         std::string RTA = tempPassenger.getRTA();
-        
-        for(int i = 0; i < Flightlist.size();i++){ //Checks if the flight already exists.
+        int i;
+        for(i = 0; i < Flightlist.size();i++){ //Checks if the flight already exists.
             std::string forigin = Flightlist[i].departureAirport;
             std::string fdestination = Flightlist[i].arrivalAirport;
             if(forigin == origin && fdestination == destination){
@@ -33,6 +34,9 @@ void FlightScheduler::startScheduleFlights
         }
         y = i + 1;
         if(y = Flightlist.size()){ //If desired flight doesnt exist yet.
+
+            
+            
             Flight newFlight(NULL,NULL,origin,destination,flightnumber,1); //Creation of new flight
                 tempPassenger.setID(newFlight.FlightNumber); //Assignment of Flightnumber for the passenger.
                 newFlight.PassengerCount = newFlight.PassengerCount + 1;
@@ -42,10 +46,32 @@ void FlightScheduler::startScheduleFlights
         }
     }
         
-        /* ANDRA DELEN AV ALGORITMEN (TILLDELA FLYGPLAN TILL VARJE FLIGHT)*/
+    /* ANDRA DELEN AV ALGORITMEN (TILLDELA FLYGPLAN TILL VARJE FLIGHT)*/
+    std::vector<Flight> FlightlistSorted;
+    int i;
+    int flightnumber
+    
+    while (!Flightlist.empty()){  //DENNA LOOP SÄTTER IN FLIGHTSEN TILL EN NY VEKTOR I STORLEKSORDNING.
+        int mostpassengers = 0;
+        int flightnumber;
+        for(i = 0;i < Flightlist.size(); i++){
+            if(Flightlist[i].PassengerCount > mostpassengers){
+                mostpassengers = Flightlist[i].PassengerCount;
+                flightnumber = Flightlist[i].FlightNumber;
+            }
+        }
         
-        /* TREDJE DELEN AV ALGORITMEN (TILLDELA DEPARTURETIME OCH ARRIVALTIME TILL VARJE FLIGHT) */
         
+        FlightlistSorted.push_back(Flightlist[i]);
+        Flightlist.erase(Flightlist.begin() + i - 1);
+        
+        
+    }
+    
+    }
+        /* TREDJE DELEN AV ALGORITMEN (TILLDELA DEPARTURETIME OCH ARRIVALTIME) */
+
+
         
 }
 
@@ -83,4 +109,17 @@ time FlightScheduler::calculateTime (double distance, aircraft &Aircraft){
     
     return hoho;
     
-}
+
+    
+    time FlightScheduler::stringtotimeconverter(std::string RTA){
+                int h;
+                int m;
+                std::string line = RTA;
+                h=std::atoi(line.substr(11,2).c_str());
+                m=std::atoi(line.substr(14,2).c_str());
+                time timeRTA;
+                timeRTA.setHour(h);
+                
+                
+            
+    }

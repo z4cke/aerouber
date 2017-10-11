@@ -49,6 +49,8 @@ public:
 	std::vector<Flight> getFlights() {
 		return scheduledFlights;
 	}
+        
+        time stringtotimeconverter(std::string RTA);
 
 };
 
