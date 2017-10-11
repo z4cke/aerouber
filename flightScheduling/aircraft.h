@@ -24,9 +24,20 @@ private:
     std::string CurrentLocation;
     fleet &AircraftModel;
 public:
-    /*
-     SAKNAR CONSTRUCTORS
-     */
+    //Default constructor
+    aircraft::aircraft();
+    
+//Non-default constructor
+aircraft(int losID, std::string losModelos, int losSeatos, std::string CL, fleet &losAircraftosModelos);
+    
+//Copy constructor
+aircraft(const aircraft& other);
+    
+//Copy-assignment constructor
+aircraft& operator=(const aircraft& other){;
+    
+//Destructor
+~aircraft();
     
     
     int getID();
