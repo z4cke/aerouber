@@ -13,15 +13,25 @@
 
 #ifndef PASSENGER_H
 #define PASSENGER_H
-
+#include <sstream>
+#include <iostream>
+#include <string>
 class Passenger {
 private:
     int ID;
-    int Destination;
+    std::string Destination;
     int currentLocation;
     int RTA;
 public:
-
+    Passenger(std::string line){
+    std::istringstream ss(line);
+        
+        ss>>ID;
+        ss>>Destination;
+        ss>>currentLocation;
+        ss>>RTA;
+        
+    }
     /**
      * 
      * @Returns the ID.
