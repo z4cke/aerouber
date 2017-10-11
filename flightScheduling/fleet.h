@@ -13,6 +13,9 @@
 
 #ifndef FLEET_H
 #define FLEET_H
+#include <sstream>
+#include <string>
+
 class fleet{
 private:
     std::string AircraftModel;
@@ -22,9 +25,16 @@ private:
     int CruisingSpeed;
     int CruisingHeight;
 public:
-    /*
-     SAKNAR CONSTRUCTORS
-     */
+    fleet(std::string line){
+    std::istringstream ss(line);
+        
+        ss>>inService;
+        ss>>PassengerCapacity;
+        ss>>MaxRange;
+        ss>>CruisingSpeed;
+        ss>>CruisingHeight;
+    }
+
     
     std::string getAircraftModel();
     int getinService();
@@ -37,4 +47,3 @@ public:
 
 
 #endif /* FLEET_H */
-
