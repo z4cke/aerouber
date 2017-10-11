@@ -5,11 +5,8 @@
                    displayName="Header Files"
                    projectFiles="true">
       <itemPath>flightScheduling/Flight.h</itemPath>
-      <itemPath>aeroForm.cpp</itemPath>
       <itemPath>graphics/aeroForm.h</itemPath>
-      <itemPath>aeroForm.h</itemPath>
-      <itemPath>graphics/aeroUber.cpp</itemPath>
-      <itemPath>graphics/aeroUber.h</itemPath>
+      <itemPath>graphics/aeroGUI.h</itemPath>
       <itemPath>io/csvFileReader.h</itemPath>
       <itemPath>io/csvFileWriter.h</itemPath>
       <itemPath>util/entity.h</itemPath>
@@ -21,13 +18,12 @@
                    displayName="Resource Files"
                    projectFiles="true">
       <itemPath>graphics/aeroForm.ui</itemPath>
-      <itemPath>aeroForm.ui</itemPath>
-      <itemPath>graphics/aeroUber.ui</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>graphics/aeroForm.cpp</itemPath>
+      <itemPath>graphics/aeroGUI.cpp</itemPath>
       <itemPath>io/csvFileWriter.cpp</itemPath>
       <itemPath>util/entity.cpp</itemPath>
       <itemPath>io/fileWriter.cpp</itemPath>
@@ -56,12 +52,6 @@
           <standard>11</standard>
         </ccTool>
       </compileType>
-      <item path="aeroForm.cpp" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="aeroForm.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="aeroForm.ui" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="flightScheduling/Flight.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="flightScheduling/flightScheduler.h" ex="false" tool="3" flavor2="0">
@@ -72,11 +62,9 @@
       </item>
       <item path="graphics/aeroForm.ui" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="graphics/aeroUber.cpp" ex="false" tool="3" flavor2="0">
+      <item path="graphics/aeroGUI.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="graphics/aeroUber.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="graphics/aeroUber.ui" ex="false" tool="3" flavor2="0">
+      <item path="graphics/aeroGUI.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="io/csvFileReader.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -122,12 +110,6 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
-      <item path="aeroForm.cpp" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="aeroForm.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="aeroForm.ui" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="flightScheduling/Flight.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="flightScheduling/flightScheduler.h" ex="false" tool="3" flavor2="0">
@@ -138,11 +120,9 @@
       </item>
       <item path="graphics/aeroForm.ui" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="graphics/aeroUber.cpp" ex="false" tool="3" flavor2="0">
+      <item path="graphics/aeroGUI.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="graphics/aeroUber.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="graphics/aeroUber.ui" ex="false" tool="3" flavor2="0">
+      <item path="graphics/aeroGUI.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="io/csvFileReader.h" ex="false" tool="3" flavor2="0">
       </item>

@@ -1,26 +1,42 @@
-#pragma once
+#ifndef AEROGUI_H
+#define AEROGUI_H
+
+#include <string>
+#include "aeroForm.h"
+
 class aeroGUI
 {
 private:
-    char requestPath;
-    // browser button netbeans library
-    // start button netbeans library
-    // textField button netbeans library
-    // info Label button netbeans library
-    // title
+    std::string requestPath;
+    aeroForm gui;
+    //aeroUber* aero;
 
 public:
+    
+    aeroGUI();
+    
+    //aeroUber* aero);
+    
+    
+    
     /**
-    * Start GUI
+    * Starts the GUI.
     */
     void openGUI();
     
     /**
     * returns path
     */
-    char getPath();
+    std::string getPath();
+    
+    
+    /**
+     * Starts the scheduling in aeroUber.
+     */
+    void start();
 		
 
 
 };
 
+#endif /* AEROGUI_H*/

@@ -38,7 +38,7 @@ int main(int argc, char *argv[]) {
     v.emplace_back(21, 2, 5);
     v.emplace_back(3, 1, 78);
     
-    //QApplication app(argc, argv);
+    QApplication app(argc, argv);
 
     csvFileWriter w;
     w.openFile("test.csv");
@@ -46,5 +46,5 @@ int main(int argc, char *argv[]) {
     w.closeFile();
     // create and show your widgets here
 
-    return 0;//app.exec();
+    return app.exec();
 }

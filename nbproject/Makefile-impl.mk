@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=aerouber123
+PROJECTNAME=aerouber
 
 # Active Configuration
 DEFAULTCONF=Debug
