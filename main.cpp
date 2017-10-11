@@ -16,6 +16,7 @@
 
 #include "io/csvFileWriter.h"
 #include "util/entity.h"
+#include "graphics/aeroGUI.h"
 
 int main(int argc, char *argv[]) {
     // initialize resources, if needed
@@ -38,13 +39,16 @@ int main(int argc, char *argv[]) {
     v.emplace_back(21, 2, 5);
     v.emplace_back(3, 1, 78);
     
-    //QApplication app(argc, argv);
+    QApplication app(argc, argv);
 
+    aeroGUI gui;
+    gui.openGUI();
+    
     csvFileWriter w;
     w.openFile("test.csv");
     w.writeFile(v);
     w.closeFile();
     // create and show your widgets here
 
-    return 0;//app.exec();
+    return app.exec();
 }
