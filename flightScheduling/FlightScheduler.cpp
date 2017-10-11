@@ -118,6 +118,8 @@ time FlightScheduler::calculateTime (double distance, aircraft &Aircraft){
                 h=std::atoi(line.substr(11,2).c_str());
                 m=std::atoi(line.substr(14,2).c_str());
                 time timeRTA;
+                timeRTA.setHour(h);
+                
                 
             
     }
