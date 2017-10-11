@@ -18,6 +18,8 @@
 
 
 class Airport {
+public:
+    enum class airportType {airport, port, station, U}; 
 private:
     int ID; /**The ID of the airport*/
     std::string name; /**Name of the airport*/
@@ -46,7 +48,7 @@ public:
      * 
      * @return 
      */
-    Airport(std::string line){
+        Airport(std::string line){
     std::istringstream ss(line);
         
         ss>>ID;
@@ -60,10 +62,13 @@ public:
         ss>>zone;
         ss>>dst;
         ss>>tz;
-        ss>>type;
+        std::string readType;
+        ss>>readType;
+        if(readType == "airport")
+            type = airportType::airport;
+        else
+            type = airportType::U;
         ss>>source;
-        std::cout<<"entity: "<<line<<std::endl;
-//        std::cout<<"Created Entity"<<std::endl;
     }
        
     /**
@@ -153,7 +158,7 @@ public:
     /**
      * An enumeration to use for the type of the airport
      */
-    enum class airportType {Airport, Trainstation, Port, Unknown}; 
+    //enum class airportType {Airport, Trainstation, Port, Unknown}; 
 };
 
 #endif /* AIRPORT_H */
