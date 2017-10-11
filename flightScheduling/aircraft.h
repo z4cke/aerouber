@@ -25,7 +25,7 @@ private:
     fleet &AircraftModel;
 public:
     //Default constructor
-    aircraft();
+    aircraft::aircraft();
     
 //Non-default constructor
 aircraft(int losID, std::string losModelos, int losSeatos, std::string CL, fleet &losAircraftosModelos);
@@ -39,7 +39,6 @@ aircraft& operator=(const aircraft& other){;
 //Destructor
 ~aircraft();
     
-    
     int getID();
     std::string getModel();
     int getSeats();
@@ -51,4 +50,3 @@ aircraft& operator=(const aircraft& other){;
 };
 
 #endif /* AIRCRAFT_H */
-
