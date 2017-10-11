@@ -54,7 +54,7 @@ public:
      * 
      * @Returns the requested time arrival.
      */
-    int getRTA();
+    std::string getRTA();
     
     int setID(int flightID);
 };

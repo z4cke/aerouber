@@ -10,28 +10,43 @@
 
 void FlightScheduler::startScheduleFlights
 (std::vector<Passenger> Passengers, std::vector<aircraft> Aircraft, std::vector<Airport> Airports){
+    
+    /* FÖRSTA DELEN AV ALGORITMEN (ASSIGNA ALLA PASSAGERARE TILL FLIGHTS)*/
     int flightnumber = 1;
     std::vector<Flight> Flightlist;
-    std::vector<Passenger> finishedP
+    std::vector<Passenger> finishedPassengers;
     while(!Passenger.empty()){
         Passenger tempPassenger = Passengers.back(); 
-        Passengers.pop_back();
+        Passengers.pop_back()
         std::string origin = tempPassenger.getCurrentLocation();
         std::string destination = tempPassenger.getDestination();
-        int RTA = tempPassenger.getRTA();
+        std::string RTA = tempPassenger.getRTA();
         
-        for(int i = 0; i < Flightlist.size();i++){
+        for(int i = 0; i < Flightlist.size();i++){ //Checks if the flight already exists.
             std::string forigin = Flightlist[i].departureAirport;
             std::string fdestination = Flightlist[i].arrivalAirport;
             if(forigin == origin && fdestination == destination){
-                tempPassenger.setID(Flightlist[i].FlightNumber);
+                tempPassenger.setID(Flightlist[i].FlightNumber); //Assignment of Flightnumber for the passenger.
+                Flightlist[i].PassengerCount = Flightlist[i].PassengerCount + 1;
+                finishedPassengers.push_back(tempPassenger);
             }
         }
-        if((i + 1) = Flightlist.size()){
+        y = i + 1;
+        if(y = Flightlist.size()){ //If desired flight doesnt exist yet.
+            Flight newFlight(NULL,NULL,origin,destination,flightnumber,1); //Creation of new flight
+                tempPassenger.setID(newFlight.FlightNumber); //Assignment of Flightnumber for the passenger.
+                newFlight.PassengerCount = newFlight.PassengerCount + 1;
+                finishedPassengers.push_back(tempPassenger);
+                flightnumber++;
+            
         }
-        
-        
     }
+        
+        /* ANDRA DELEN AV ALGORITMEN (TILLDELA FLYGPLAN TILL VARJE FLIGHT)*/
+        
+        /* TREDJE DELEN AV ALGORITMEN (TILLDELA DEPARTURETIME OCH ARRIVALTIME TILL VARJE FLIGHT) */
+        
+        
 }
 
 double FlightScheduler::calculateDistance(Airport &Origin, Airport &Destination, aircraft &Aircraft){

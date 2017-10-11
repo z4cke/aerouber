@@ -19,7 +19,7 @@ int Passenger::getCurrentLocation(){
     return Passenger.currentLocation;   
 }
 
-int Passenger::getRTA(){
+std::string Passenger::getRTA(){
     return Passenger.RTA;   
 }
 
