@@ -21,7 +21,7 @@ private:
     int ID;
     std::string Destination;
     int currentLocation;
-    int RTA;
+    std::string RTA;
 public:
     Passenger(std::string line){
     std::istringstream ss(line);
