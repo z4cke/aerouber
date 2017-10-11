@@ -29,6 +29,12 @@ private:
 	int PassengerCount;
 public:
 	std::string PrintFlight();
+        
+        //Default constructor
+        Flight();
+        
+        //Non-default constructor
+        Flight(time dT, time aT, std::string dA, std::string aA, int ID, int PassengerCount);
 };
 
 #endif /* FLIGHT_H */
