@@ -7,6 +7,7 @@
 #include "flightScheduler.h"
 #include <math.h>
 #include <vector>
+#include <string>
 
 void FlightScheduler::startScheduleFlights
 (std::vector<Passenger> Passengers, std::vector<aircraft> Aircraft, std::vector<Airport> Airports){
@@ -117,7 +118,6 @@ time FlightScheduler::calculateTime (double distance, aircraft &Aircraft){
                 h=std::atoi(line.substr(11,2).c_str());
                 m=std::atoi(line.substr(14,2).c_str());
                 time timeRTA;
-                
                 
             
     }

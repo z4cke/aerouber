@@ -36,6 +36,10 @@ public:
 */
 
 	int getMin(); 
+       
+        
+        void setMin(int hh);
+        void setHour(int mm);
 	
 
 };

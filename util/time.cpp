@@ -49,6 +49,15 @@ int time::getMin(){
     return m;
 }
 
+void time::setHour(int hh){
+    h = hh;
+}
+
+void time::setMin(int mm){
+    m = mm;
+}
+
+
 
 
 
