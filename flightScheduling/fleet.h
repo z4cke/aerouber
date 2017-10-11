@@ -14,7 +14,6 @@
 #ifndef FLEET_H
 #define FLEET_H
 #include <sstream>
-#include <iostream>
 #include <string>
 
 class fleet{
@@ -34,7 +33,6 @@ public:
         ss>>MaxRange;
         ss>>CruisingSpeed;
         ss>>CruisingHeight;
-        std::cout<<" fleet:"<<line<<std::endl;
     }
     /*
      SAKNAR CONSTRUCTORS
