@@ -24,7 +24,7 @@ public:
     
     time setTime(int hour, int min, int sec);
     
-    time CompareTime(time tajm);
+    time CompareTime(time& tajm);
 	
 /**
 *Returns hour int

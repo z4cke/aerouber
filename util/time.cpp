@@ -12,7 +12,7 @@ time::time(){
     h=m=s=0;
 }
 
-time::time(int sec){ //ND constructor (tar in sekunder)
+time::time(double sec){ //ND constructor (tar in sekunder)
     int h,m,s;
     h = 0;
     m = 0;
@@ -38,7 +38,6 @@ time time::CompareTime(time &one){
     comparedtime.h = timma;
     comparedtime.m = minut;
     return comparedtime;
-}
 }
 
 int time::getHour(){
