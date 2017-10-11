@@ -15,26 +15,27 @@ aircraft::aircraft(){
 }
     
 //Non-default constructor
-aircraft(int losID, std::string losModelos, int losSeatos, std::string CL, fleet &losAircraftosModelos){
-    ID = losID;
-    Model = losModelos;
-    Seats = losSeatos;
-    CurrentLocation = CL;
-    AircraftModel = losAircraftosModelos;
+aircarft::aircraft(int i, std::string m, int s, std::string c, fleet &am){
+    ID = i;
+    Model = m;
+    Seats = s;
+    CurrentLocation = c;
+    AircraftModel = am;
 }
     
 //Copy constructor
-aircraft(const aircraft& other){
-    
+aircraft::aircraft(const aircraft& other){
+        
 }
     
 //Copy-assignment constructor
-aircraft& operator=(const aircraft& other){
+aircraft::aircraft& operator=(const aircraft& other){
     return *this;
 }
     
 //Destructor
-~aircraft();
+~aircraft(){
+}
 
 int getID();
 std::string getModel();
