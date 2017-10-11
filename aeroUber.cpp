@@ -10,14 +10,6 @@
 #define outputFile "output.csv"
 
 #include "aeroUber.h"
-#include "graphics/aeroGUI.h"
-#include "io/csvFileWriter.h"
-#include "io/csvFIleReader.h"
-#include "flightScheduler.h"
-#include "flightScheduler/passenger.h"
-#include "flightScheduler/Flight.h"
-#include "flightScheduler/Fleet.h"
-#include "aeroGUI.h"
 
 AeroUber::AeroUber(){
     
@@ -28,12 +20,12 @@ AeroUber::AeroUber(){
 
 void AeroUber::startScheduler(){
     loadPassengerRequests();
-    scheduler.startScheduleFlights(passengerList, aircraftList, airportList, fleetList);
+    scheduler.startScheduleFlights(passengerList, aircraftList, airportList);
     
     csvFileWriter writer;
     
     writer.openFile(outputFile);
-    writer.readFile(outputFile);
+    writer.writeFile(scheduler.getFlights());
     writer.closeFile();
     
 }
@@ -53,7 +45,7 @@ void AeroUber::loadFiles(){
     
     //reads aircraft file and fills the aircraft vector.
     reader.openFile(aircraftFile);
-    reader.read.File(aircraftList);
+    reader.readFile(aircraftList);
     reader.closeFile();
 }
 
@@ -61,8 +53,8 @@ void AeroUber::loadPassengerRequests(){
     csvFileReader reader;
     
     reader.openFile(gui.getPath());
-    reader.readFile(gui.getPath());
-    reader.closeFile(gui.getPath());
+    reader.readFile(passengerList);
+    reader.closeFile();
 
 }
 

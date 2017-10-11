@@ -10,11 +10,11 @@
  *
  * Created on den 6 oktober 2017, 10:27
  */
-#include "fleet.h"
-#include <vector>
+
 #ifndef AIRCRAFT_H
 #define AIRCRAFT_H
-
+#include "fleet.h"
+#include <vector>
 
 class aircraft{
 private:
@@ -25,19 +25,21 @@ private:
     fleet &AircraftModel;
 public:
     //Default constructor
-    aircraft::aircraft();
+    aircraft();
     
 //Non-default constructor
 aircraft(int losID, std::string losModelos, int losSeatos, std::string CL, fleet &losAircraftosModelos);
+
+    //Destructor
+    ~aircraft();
     
 //Copy constructor
 aircraft(const aircraft& other);
     
 //Copy-assignment constructor
-aircraft& operator=(const aircraft& other){;
+aircraft& operator=(const aircraft& other);
     
-//Destructor
-~aircraft();
+
     
     int getID();
     std::string getModel();

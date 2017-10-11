@@ -55,7 +55,7 @@ public:
         pathSection->setGeometry(QRect(10, 100, 391, 21));
         infoLabel = new QLabel(centralwidget);
         infoLabel->setObjectName(QString::fromUtf8("infoLabel"));
-        infoLabel->setGeometry(QRect(10, 80, 131, 16));
+        infoLabel->setGeometry(QRect(10, 80, 261, 16));
         aeroForm->setCentralWidget(centralwidget);
 
         retranslateUi(aeroForm);

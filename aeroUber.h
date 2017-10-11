@@ -13,15 +13,22 @@
 #ifndef AEROUBER_H
 #define AEROUBER_H
 
-
 #include <vector>
+#include "io/csvFileWriter.h"
+#include "io/csvFileReader.h"
+#include "flightScheduling/flightScheduler.h"
+#include "flightScheduling/passenger.h"
+#include "flightScheduling/Flight.h"
+#include "flightScheduling/fleet.h"
+#include "graphics/aeroGUI.h"
+
 using namespace std;
 
 class AeroUber{
     private:
         std::vector<Passenger> passengerList;
-        std::vector<Fleet> fleetList;
-        std::vector<Aircraft> aircraftList;
+        std::vector<fleet> fleetList;
+        std::vector<aircraft> aircraftList;
         std::vector<Airport> airportList;
         aeroGUI gui;
         FlightScheduler scheduler;
