@@ -36,13 +36,13 @@ public:
      * return
      */
     void readFile(std::vector<type>& list){
-    std::string rad;
-    if(fileOpened = true){
-        while(getline(file,rad)){
-            //std::cout<<readFileType(rad)<<std::endl;
-            list.emplace_back(readFileType(rad));
+        std::string rad;
+        if(fileOpened == true){
+            while(getline(file, rad)){
+                //std::cout<<readFileType(rad)<<std::endl;
+                list.emplace_back(readFileType(rad));
+            }
         }
-    }
     }
     
     /*

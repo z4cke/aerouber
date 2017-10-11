@@ -29,6 +29,7 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>flightScheduling/Flight.cpp</itemPath>
+      <itemPath>flightScheduling/FlightScheduler.cpp</itemPath>
       <itemPath>graphics/aeroForm.cpp</itemPath>
       <itemPath>graphics/aeroGUI.cpp</itemPath>
       <itemPath>aeroUber.cpp</itemPath>
@@ -72,6 +73,11 @@
       <item path="flightScheduling/Flight.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="flightScheduling/Flight.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="flightScheduling/FlightScheduler.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
       <item path="flightScheduling/aircraft.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -156,6 +162,11 @@
       <item path="flightScheduling/Flight.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="flightScheduling/Flight.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="flightScheduling/FlightScheduler.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
       <item path="flightScheduling/aircraft.h" ex="false" tool="3" flavor2="0">
       </item>

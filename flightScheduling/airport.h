@@ -49,8 +49,8 @@ public:
      * 
      * @return 
      */
-        Airport(std::string line){
-        std::istringstream ss(line);
+        Airport(std::string values){
+        std::istringstream ss(values);
         
         ss>>ID;
         ss>>city;

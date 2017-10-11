@@ -9,9 +9,6 @@
 
 
 
-std::string Flight::PrintFlight(){
-    return "FLIGHT";
-}
 
 
 Flight::Flight(){
@@ -34,4 +31,14 @@ Flight::Flight(time2 dT, time2 aT, std::string dA, std::string aA, int ID, int P
     departureAirport = dA;
     departureTime = dT;
      */
+}
+
+
+std::string Flight::PrintFlight() const{
+    return "FLIGHT";
+}
+
+std::string& operator <<(std::string &s, const Flight& flight ){
+    s = flight.PrintFlight();
+    return s;
 }

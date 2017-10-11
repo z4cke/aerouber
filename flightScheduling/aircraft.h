@@ -18,17 +18,25 @@
 
 class aircraft{
 private:
-    int ID;
+    int ID = 0;
     std::string Model;
-    int Seats;
-    std::string CurrentLocation;
-    fleet &AircraftModel;
+    int Seats = 0;
+    std::string CurrentLocation = "";
+    fleet *AircraftModel;
 public:
-    //Default constructor
-    aircraft();
+    
     
 //Non-default constructor
 aircraft(int losID, std::string losModelos, int losSeatos, std::string CL, fleet &losAircraftosModelos);
+
+aircraft(std::string values){
+    std::istringstream ss(values);
+    ss >> ID;
+    ss >> Model;
+    ss >> Seats;
+    ss >> CurrentLocation;
+    AircraftModel = nullptr;
+}
 
     //Destructor
     ~aircraft();
