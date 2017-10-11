@@ -32,6 +32,7 @@
       <itemPath>io/csvFileWriter.cpp</itemPath>
       <itemPath>util/entity.cpp</itemPath>
       <itemPath>io/fileWriter.cpp</itemPath>
+      <itemPath>flightScheduling/fleet.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
       <itemPath>util/time.cpp</itemPath>
     </logicalFolder>
@@ -63,6 +64,8 @@
       <item path="flightScheduling/aircraft.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="flightScheduling/airport.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="flightScheduling/fleet.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="flightScheduling/fleet.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -133,6 +136,8 @@
       <item path="flightScheduling/aircraft.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="flightScheduling/airport.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="flightScheduling/fleet.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="flightScheduling/fleet.h" ex="false" tool="3" flavor2="0">
       </item>

@@ -25,7 +25,7 @@ private:
     fleet &AircraftModel;
 public:
     //Default constructor
-    aircraft::aircraft();
+    aircraft();
     
 //Non-default constructor
 aircraft(int losID, std::string losModelos, int losSeatos, std::string CL, fleet &losAircraftosModelos);
