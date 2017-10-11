@@ -22,3 +22,8 @@ int Passenger::getCurrentLocation(){
 int Passenger::getRTA(){
     return Passenger.RTA;   
 }
+
+void Passenger::setID(int flightID){
+    Passenger.ID = flightID;
+    
+}

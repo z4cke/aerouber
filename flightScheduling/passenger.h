@@ -55,6 +55,8 @@ public:
      * @Returns the requested time arrival.
      */
     int getRTA();
+    
+    int setID(int flightID);
 };
 
 #endif /* PASSENGER_H */

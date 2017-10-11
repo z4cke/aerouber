@@ -6,11 +6,28 @@
 
 #include "flightScheduler.h"
 #include <math.h>
+#include <vector>
 
 void FlightScheduler::startScheduleFlights
-(std::vector<Passenger>& Passengers, std::vector<aircraft>& Aircraft, std::vector<Airport>& Airports){
-
-
+(std::vector<Passenger> Passengers, std::vector<aircraft> Aircraft, std::vector<Airport> Airports){
+    int flightnumber = 1;
+    std::vector<Flight> Flightlist;
+    std::vector<Passenger> finishedP
+    while(!Passenger.empty()){
+        Passenger tempPassenger = Passengers.back(); 
+        Passengers.pop_back();
+        std::string origin = tempPassenger.getCurrentLocation();
+        std::string destination = tempPassenger.getDestination();
+        int RTA = tempPassenger.getRTA();
+        
+        for(int i = 0; i < Flightlist.size();i++){
+            std::string forigin = Flightlist[i].departureAirport;
+            std::string fdestination = Flightlist[i].arrivalAirport;
+            if(forigin == origin && fdestination == destination){
+            }
+        }
+        
+    }
 }
 
 double FlightScheduler::calculateDistance(Airport &Origin, Airport &Destination, aircraft &Aircraft){
