@@ -19,8 +19,7 @@
 #include "airport.h"
 #include "passenger.h"
 #include <vector>
-#include <iostream>
-#include <iomanip>
+#include <string>
 
 
 class FlightScheduler {
@@ -28,7 +27,9 @@ private:
 	std::vector<Flight> scheduledFlights;
 
 public:
-    FlightScheduler();
+    FlightScheduler(){
+    
+    }
  
     
         /*

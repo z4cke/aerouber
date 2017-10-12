@@ -20,10 +20,10 @@ class Passenger {
 private:
     int ID;
     std::string Destination;
-    int currentLocation;
+    std::string currentLocation;
     std::string RTA;
 public:
-    Passenger(int ID, std::string Destination, int currentLocation, std::string RTA):ID(ID), Destination(Destination), currentLocation(currentLocation), RTA(RTA){
+    Passenger(int ID, std::string Destination, std::string currentLocation, std::string RTA):ID(ID), Destination(Destination), currentLocation(currentLocation), RTA(RTA){
     
     }
     
@@ -43,7 +43,7 @@ public:
      * 
      * @Returns the current location.
      */
-    int getCurrentLocation();
+    std::string getCurrentLocation();
 
     /**
      * 

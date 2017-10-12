@@ -15,7 +15,7 @@ std::string Passenger::getDestination(){
     return Destination;   
 }
 
-int Passenger::getCurrentLocation(){
+std::string Passenger::getCurrentLocation(){
     return currentLocation;   
 }
 

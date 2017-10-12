@@ -25,12 +25,10 @@ Flight::Flight(){
 Flight::Flight(time2 dT, time2 aT, std::string dA, std::string aA, int ID, int PassengerCount){
     FlightNumber = ID;
     this->PassengerCount = PassengerCount;
-    /*
     arrivalAirport = aA;
-    arrivalTime = aT;
+    //arrivalTime = aT;
     departureAirport = dA;
-    departureTime = dT;
-     */
+    //departureTime = dT;
 }
 
 

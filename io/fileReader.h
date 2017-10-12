@@ -58,8 +58,8 @@ public:
                 
                 int ID = std::stoi(checkValue);
                 std::string Destination = readFileType(rad);
-                int currentLocation = std::stoi(readFileType(rad));
                 std::string RTA = readFileType(rad);
+                std::string currentLocation = readFileType(rad);
                 
                 list.emplace_back(ID, Destination, currentLocation, RTA);
             }
