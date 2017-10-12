@@ -57,6 +57,20 @@ void time2::setMin(int mm){
 }
 
 
+time2 time2::stringtoTimeConverter(std::string RTA){
+                int h;
+                int m;
+                std::string line = RTA;
+                h=std::atoi(line.substr(11,2).c_str());
+                m=std::atoi(line.substr(14,2).c_str());
+                time2 timeRTA;
+                timeRTA.setHour(h);
+                timeRTA.setMin(m);
+                
+                return timeRTA;
+    }
+
+
 
 
 

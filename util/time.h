@@ -40,6 +40,8 @@ public:
         
         void setMin(int hh);
         void setHour(int mm);
+        
+        time2 stringtoTimeConverter(std::string);
 	
 
 };
