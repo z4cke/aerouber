@@ -15,6 +15,7 @@
 #define FLIGHT_H
 
 #include "../util/time.h"
+#include "aircraft.h"
 
 #ifdef TIME_H
 #include <iostream>
@@ -23,20 +24,29 @@
 
 class Flight {
 private:
-	time2 * departureTime;
-	time2 * arrivalTime;
+	time2 departureTime;
+	time2 arrivalTime;
 	std::string departureAirport;
 	std::string arrivalAirport;
 	int FlightNumber;
 	int PassengerCount;
+        aircraft *Aircraft;
         
 public:
+    
+        std::string getdepartureAirport();
+        std::string getarrivalAirport();
+        int         getID();
+        int         getPassengerCount();
+        void         setID(int ID);
+        void         setPassengerCount(int Count);
+        
 	
         //Default constructor
         Flight();
         
         //Non-default constructor
-        Flight(time2 dT, time2 aT, std::string dA, std::string aA, int ID, int PassengerCount);
+        Flight(time2 dT, time2 aT, std::string dA, std::string aA, int ID, int PassengerCount,aircraft *Aircraft);
         
         std::string PrintFlight() const;
         

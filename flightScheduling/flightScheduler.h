@@ -47,14 +47,16 @@ public:
         
         /* Takes the distance and aircraft speed to calculate the time it takes to reach the destination
          */
-	time2 calcuateTime(double distance, aircraft &Aircraft);
+	time2 calculateTime (double distance, aircraft &Aircraft);
 
+
+        time2 stringtotimeconverter(std::string RTA);
+        
+        
 	std::vector<Flight>& getFlights() {
 		return scheduledFlights;
 	}
         
-        time2 stringtotimeconverter(std::string RTA);
-
 };
 
 #endif /* FLIGHTSCHEDULER_H */
