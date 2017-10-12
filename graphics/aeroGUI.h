@@ -4,18 +4,18 @@
 #include <string>
 #include "aeroForm.h"
 
+class AeroUber;
+
 class aeroGUI
 {
 private:
     std::string requestPath;
     aeroForm gui;
-    //aeroUber* aero;
+    AeroUber* aero;
 
 public:
     
-    aeroGUI();
-    
-    //aeroUber* aero);
+    aeroGUI(AeroUber* aero);
     
     
     

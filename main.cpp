@@ -16,6 +16,7 @@
 
 #include "io/csvFileWriter.h"
 #include "util/entity.h"
+#include "aeroUber.h"
 #include "graphics/aeroGUI.h"
 
 int main(int argc, char *argv[]) {
@@ -40,9 +41,8 @@ int main(int argc, char *argv[]) {
     v.emplace_back(3, 1, 78);
     
     QApplication app(argc, argv);
-
-    aeroGUI gui;
-    gui.openGUI();
+    
+    AeroUber aero;
     
     csvFileWriter w;
     w.openFile("test.csv");

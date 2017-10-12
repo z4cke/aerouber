@@ -5,8 +5,9 @@
  */
 
 #include "aeroGUI.h"
+#include "../aeroUber.h"
 
-aeroGUI::aeroGUI(){//aeroUber* aero):aero(aero){
+aeroGUI::aeroGUI(AeroUber* aero):aero(aero){
     gui.connectToGUI(this);
 }
 
@@ -22,4 +23,5 @@ std::string aeroGUI::getPath(){
 
 void aeroGUI::start(){
     gui.setEnabled(!gui.isEnabled());
+    aero->startScheduler();
 }

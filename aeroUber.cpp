@@ -12,7 +12,7 @@
 #include "aeroUber.h"
 #include <string>
 
-AeroUber::AeroUber(){
+AeroUber::AeroUber():gui(this){
     
     loadFiles();
     gui.openGUI();
