@@ -73,6 +73,12 @@ void FlightScheduler::startScheduleFlights
             }
         }
         
+        for(int temp = 0; temp < AircraftatOrigin.size(); temp++){
+            if(FlightlistSorted[i].PassengerCount < AircraftatOrigin[temp].getSeats() && FlightlistSorted[i].AssignedPlane.getSeats() < AircraftatOrigin[temp].getSeats()){
+                FlightlistSorted[i].AssignedPlane = AircraftatOrigin[temp];
+            }
+        }
+        
         
         /* KOD FÖR ATT HITTA POSITION AV FLYGPLATS*/
         int y = 0;
