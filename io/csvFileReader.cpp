@@ -19,15 +19,13 @@ std::string csvFileReader::readFileType(std::string& line){
     
     std::cout <<"Orginal > "<< line << std::endl;
     if(getline(ss,temp,',')){
-        int removeQuotations = 0;
         if(temp[0]=='"'){ //removes quatiations
             
             temp=temp.substr(1,(temp.length()-1) -1); // temp.length()-1 is the last index
             //std::cout<<temp<<std::endl;
-            removeQuotations = 2;
         }
         unformated+=temp;
-        int startSub = line.find(",");// + removeQuotations;
+        int startSub = line.find(",");
         if(startSub > 0) startSub += 1;//removes the ',' character
         else if(startSub < 0) startSub = 0;
         

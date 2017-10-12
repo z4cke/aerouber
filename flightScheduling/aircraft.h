@@ -18,7 +18,7 @@
 
 class aircraft{
 private:
-    int ID = 0;
+    std::string ID = "";
     std::string Model = "";
     int Seats = 0;
     std::string CurrentLocation = "";
@@ -27,16 +27,8 @@ public:
     
     
 //Non-default constructor
-aircraft(int losID, std::string losModelos, int losSeatos, std::string CL, fleet *losAircraftosModelos);
+aircraft(std::string losID, std::string losModelos, int losSeatos, std::string CL);
 
-aircraft(std::string values){
-    std::istringstream ss(values);
-    ss >> ID;
-    ss >> Model;
-    ss >> Seats;
-    ss >> CurrentLocation;
-    AircraftModel = nullptr;
-}
 
     //Destructor
     ~aircraft();
@@ -49,7 +41,7 @@ aircraft& operator=(const aircraft& other);
     
 
     
-    int getID();
+    std::string getID();
     std::string getModel();
     int getSeats();
     std::string getCurrentLocation();

@@ -15,12 +15,12 @@
 }*/
     
 //Non-default constructor
-aircraft::aircraft(int i, std::string m, int s, std::string c, fleet *am){
+aircraft::aircraft(std::string i, std::string m, int s, std::string c){
     ID = i;
     Model = m;
     Seats = s;
     CurrentLocation = c;
-    AircraftModel = am;
+    AircraftModel = nullptr;
 }
     
 //Copy constructor
@@ -38,7 +38,7 @@ aircraft::~aircraft(){
     
 }
 
-int aircraft::getID(){return ID;}
+std::string aircraft::getID(){return ID;}
 std::string aircraft::getModel(){return Model;}
 int aircraft::getSeats(){return Seats;}
 std::string aircraft::getCurrentLocation(){return CurrentLocation;}

@@ -48,23 +48,55 @@ public:
             }
         }
     }
-    /*
+    
+    void readFile(std::vector<Passenger>& list){
+        std::string rad;
+        if(fileOpened == true){
+            while(getline(file, rad)){
+                std::string checkValue = readFileType(rad);
+                if(checkValue == "Passenger ID")continue;
+                
+                int ID = std::stoi(checkValue);
+                std::string Destination = readFileType(rad);
+                int currentLocation = std::stoi(readFileType(rad));
+                std::string RTA = readFileType(rad);
+                
+                list.emplace_back(ID, Destination, currentLocation, RTA);
+            }
+        }
+    }
+    
+    void readFile(std::vector<aircraft>& list){
+        std::string rad;
+        if(fileOpened == true){
+            while(getline(file, rad)){
+                std::string checkValue = readFileType(rad);
+                if(checkValue == "ID")continue;
+               
+                std::string losID = checkValue;
+                std::string losModelos = readFileType(rad);
+                int losSeatos = std::stoi(readFileType(rad));
+                std::string CL = readFileType(rad);
+                list.emplace_back(losID, losModelos, losSeatos, CL);
+            }
+        }
+    }
+    
     void readFile(std::vector<fleet>& list){
         std::string rad;
         if(fileOpened == true){
             while(getline(file, rad)){
-                time2 dT = readFileType(rad);time2 aT, std::string dA, std::string aA, int ID, int PassengerCount
+                std::string AircraftModel = readFileType(rad);
+                int inService = std::stoi(readFileType(rad)); 
+                int PassengerCapacity = std::stoi(readFileType(rad));
+                int MaxRange = std::stoi(readFileType(rad));
+                int CruisingSpeed = std::stoi(readFileType(rad));
+                int CruisingHeight = std::stoi(readFileType(rad));
                 
-                int id = std::stoi(readFileType(rad));
-                std::string name = readFileType(rad);
-                
-                list.emplace_back(id, name, city, country, iata, icao, lat, lon,
-                        alt, zone, dst, tz, type, source);
-                
-                
+                list.emplace_back(AircraftModel, inService, PassengerCapacity, MaxRange, CruisingSpeed, CruisingHeight);
             }
         }
-    }*/
+    }
     
     void readFile(std::vector<Airport>& list){
         std::string rad;

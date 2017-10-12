@@ -1,6 +1,8 @@
 #ifndef TIME_H
 #define TIME_H
 
+#include <string>
+
 /**
 *Time object is used to calculate and evaluate flight scheduling for passengers. 
 */
@@ -22,6 +24,9 @@ public:
     //Non-default constructor (TAR BARA IN SEKUNDER)
     time2(double sec);
     
+    //non-default constructor, takes in a string representation of the time. 
+    time2(std::string time);
+    
     time2 setTime(int hour, int min, int sec);
     
     time2 CompareTime(time2& tajm);
@@ -41,7 +46,7 @@ public:
         void setMin(int hh);
         void setHour(int mm);
         
-        time2 stringtoTimeConverter(std::string);
+        
 	
 
 };

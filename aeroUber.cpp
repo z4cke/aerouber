@@ -34,22 +34,22 @@ void AeroUber::startScheduler(){
 
 void AeroUber::loadFiles(){
     csvFileReader reader;
-    
+   /*
     // reads airport file and fills the airport vector.
     reader.openFile(airportFile);
     reader.readFile(airportList);
     reader.closeFile();
-#if 0
+
     // reads fleet file and fills the aircraft vector.
     reader.openFile(fleetFile);
     reader.readFile(fleetList);
     reader.closeFile();
-    
+   
     //reads aircraft file and fills the aircraft vector.
     reader.openFile(aircraftFile);
     reader.readFile(aircraftList);
     reader.closeFile();
-#endif
+*/
 }
 
 void AeroUber::loadPassengerRequests(){

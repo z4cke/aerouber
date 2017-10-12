@@ -25,6 +25,13 @@ private:
     int CruisingSpeed;
     int CruisingHeight;
 public:
+    
+    fleet(std::string AircraftModel, int inService, int PassengerCapacity, int MaxRange, int CruisingSpeed, int CruisingHeight)
+    :AircraftModel(AircraftModel),inService(inService),PassengerCapacity(PassengerCapacity),
+            MaxRange(MaxRange),CruisingSpeed(CruisingSpeed),CruisingHeight(CruisingHeight){}
+   
+    
+    /*
     fleet(std::string line){
     std::istringstream ss(line);
         
@@ -33,7 +40,7 @@ public:
         ss>>MaxRange;
         ss>>CruisingSpeed;
         ss>>CruisingHeight;
-    }
+    }*/
 
     
     std::string getAircraftModel();

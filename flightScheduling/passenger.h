@@ -23,15 +23,10 @@ private:
     int currentLocation;
     std::string RTA;
 public:
-    Passenger(std::string line){
-    std::istringstream ss(line);
-        
-        ss>>ID;
-        ss>>Destination;
-        ss>>currentLocation;
-        ss>>RTA;
-        
+    Passenger(int ID, std::string Destination, int currentLocation, std::string RTA):ID(ID), Destination(Destination), currentLocation(currentLocation), RTA(RTA){
+    
     }
+    
     /**
      * 
      * @Returns the ID.

@@ -13,7 +13,6 @@ time2::time2(){
 }
 
 time2::time2(double sec){ //ND constructor (tar in sekunder)
-    int h,m,s;
     h = 0;
     m = 0;
     s = sec;
@@ -25,6 +24,12 @@ time2::time2(double sec){ //ND constructor (tar in sekunder)
             h = h + 1;
         }
     }
+}
+
+time2::time2(std::string line){
+    s = 0;
+    h=std::atoi(line.substr(11,2).c_str());
+    m=std::atoi(line.substr(14,2).c_str());
 }
 
 time2 time2::CompareTime(time2 &one){
@@ -57,18 +62,7 @@ void time2::setMin(int mm){
 }
 
 
-time2 time2::stringtoTimeConverter(std::string RTA){
-                int h;
-                int m;
-                std::string line = RTA;
-                h=std::atoi(line.substr(11,2).c_str());
-                m=std::atoi(line.substr(14,2).c_str());
-                time2 timeRTA;
-                timeRTA.setHour(h);
-                timeRTA.setMin(m);
-                
-                return timeRTA;
-    }
+
 
 
 
