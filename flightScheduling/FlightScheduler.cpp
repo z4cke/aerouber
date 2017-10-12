@@ -15,32 +15,32 @@ void FlightScheduler::startScheduleFlights
     /* FÖRSTA DELEN AV ALGORITMEN (ASSIGNA ALLA PASSAGERARE TILL FLIGHTS)*/
     int flightnumber = 1;
     std::vector<Flight> Flightlist;
-    std::vector<Passenger> finishedPassengers;
+    std::vector<Passenger> finishedPassengers; //Lista för passagerare som fått ett flyg tilldelat till sig.
     while(!Passenger.empty()){
-        Passenger tempPassenger = Passengers.back(); 
+        Passenger tempPassenger = Passengers.back();  //Ta ut passagerare ur vektorn..
         Passengers.pop_back()
         std::string origin = tempPassenger.getCurrentLocation();
         std::string destination = tempPassenger.getDestination();
         std::string RTA = tempPassenger.getRTA();
         int i;
-        for(i = 0; i < Flightlist.size();i++){ //Checks if the flight already exists.
+        for(i = 0; i < Flightlist.size();i++){ //Kollar om flyg redan finns
             std::string forigin = Flightlist[i].departureAirport;
             std::string fdestination = Flightlist[i].arrivalAirport;
-            if(forigin == origin && fdestination == destination){
-                tempPassenger.setID(Flightlist[i].FlightNumber); //Assignment of Flightnumber for the passenger.
-                Flightlist[i].PassengerCount = Flightlist[i].PassengerCount + 1;
-                finishedPassengers.push_back(tempPassenger);
+            if(forigin == origin && fdestination == destination){ //Om flyg med samma origin/destination finns-
+                tempPassenger.setID(Flightlist[i].FlightNumber); //Ge passageraren flightnummer
+                Flightlist[i].PassengerCount = Flightlist[i].PassengerCount + 1; //addera passagerarcount
+                finishedPassengers.push_back(tempPassenger); //Pusha passagerare in i färdiga passagerar vektorn
             }
         }
         y = i + 1;
-        if(y = Flightlist.size()){ //If desired flight doesnt exist yet.
+        if(y = Flightlist.size()){ //Om flyg med origin/destination inte finns
 
             
-            
-            Flight newFlight(NULL,NULL,origin,destination,flightnumber,1); //Creation of new flight
-                tempPassenger.setID(newFlight.FlightNumber); //Assignment of Flightnumber for the passenger.
-                newFlight.PassengerCount = newFlight.PassengerCount + 1;
+            Flight newFlight(NULL,NULL,origin,destination,flightnumber,1); //Skapandet av ny flight
+                tempPassenger.setID(newFlight.FlightNumber); //Ge passageraren ett flightnummer.
+                newFlight.PassengerCount = newFlight.PassengerCount + 1; //addera 1 till passengercount
                 finishedPassengers.push_back(tempPassenger);
+                Flightlist.push_back(newFlight);
                 flightnumber++;
             
         }
@@ -49,26 +49,45 @@ void FlightScheduler::startScheduleFlights
     /* ANDRA DELEN AV ALGORITMEN (TILLDELA FLYGPLAN TILL VARJE FLIGHT)*/
     std::vector<Flight> FlightlistSorted;
     int i;
-    int flightnumber
     
     while (!Flightlist.empty()){  //DENNA LOOP SÄTTER IN FLIGHTSEN TILL EN NY VEKTOR I STORLEKSORDNING.
-        int mostpassengers = 0;
-        int flightnumber;
-        for(i = 0;i < Flightlist.size(); i++){
-            if(Flightlist[i].PassengerCount > mostpassengers){
+        int highestCount = 0;
+        int vectorposition;
+         for(i = 0;i < Flightlist.size(); i++){
+            if(Flightlist[i].PassengerCount > highestCount){
                 mostpassengers = Flightlist[i].PassengerCount;
-                flightnumber = Flightlist[i].FlightNumber;
+                vectorposition = i;
+            }
+        }
+        Flight tempholder = Flightlist[vectorposition];
+        Flightlist.erase(Flightlist.begin()+i-1);
+        FlightlistSorted.push_back(tempholder);
+    }
+    
+    for(i = 0; i < FlightlistSorted.size(); i++){ //För varje flight
+        std::vector<aircraft> AircraftatOrigin; //Storear varje flygplan på den flygplatsen.
+        int h = 0;
+        while(h < Aircraft.size()){ //Kollar vilka plan som finns vid den flygplatsen.
+            if(Aircraft[h].getCurrentLocation() == FlightlistSorted[i].departureAirport){
+                AircraftatOrigin.push_back(Aircraft[h]); //lägger till i vektorn om flygplanet är vid den flygplatsen
             }
         }
         
         
-        FlightlistSorted.push_back(Flightlist[i]);
-        Flightlist.erase(Flightlist.begin() + i - 1);
-        
+        /* KOD FÖR ATT HITTA POSITION AV FLYGPLATS*/
+        int y = 0;
+        int z = 0;
+        while(Airports[y].getICAO() != FlightlistSorted[i].departureAirport){
+            y++;
+        }
+        while(Airports[z].getICAO() != FlightlistSorted[i].arrivalAirport){
+            z++;
+        }
+        double distance = calculateDistance(&Airports[y],)
+            
         
     }
     
-    }
         /* TREDJE DELEN AV ALGORITMEN (TILLDELA DEPARTURETIME OCH ARRIVALTIME) */
 
 
@@ -119,6 +138,7 @@ time FlightScheduler::calculateTime (double distance, aircraft &Aircraft){
                 m=std::atoi(line.substr(14,2).c_str());
                 time timeRTA;
                 timeRTA.setHour(h);
+                timeRTA.setMin(m);
                 
                 
             

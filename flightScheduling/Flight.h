@@ -29,6 +29,7 @@ private:
 	std::string arrivalAirport;
 	int FlightNumber;
 	int PassengerCount;
+        
 public:
 	
         //Default constructor
