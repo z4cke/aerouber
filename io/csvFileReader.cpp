@@ -7,39 +7,54 @@
 #include <iostream>
 #include <sstream>
 
+#define debug
+
+#ifdef debug
+
+//skickar tillbaka ett värde, och tar bort värdet från line.
 std::string csvFileReader::readFileType(std::string& line){
     std::string unformated="";
     std::string temp;
     std::istringstream ss(line);
-    int c = 0;
+    
+    std::cout <<"Orginal > "<< line << std::endl;
+    if(getline(ss,temp,',')){
+        int removeQuotations = 0;
+        if(temp[0]=='"'){ //removes quatiations
+            
+            temp=temp.substr(1,(temp.length()-1) -1); // temp.length()-1 is the last index
+            //std::cout<<temp<<std::endl;
+            removeQuotations = 2;
+        }
+        unformated+=temp;
+        int startSub = line.find(",");// + removeQuotations;
+        if(startSub > 0) startSub += 1;//removes the ',' character
+        else if(startSub < 0) startSub = 0;
+        
+        int subLength = (line.length()-startSub);
+        
+        line = line.substr(startSub, subLength);
+    }
+    std::cout <<"Klipp > "<< unformated << std::endl;
+    std::cout <<"Ny > "<< line << std::endl;
+    return unformated;
+}
+#else
+std::string csvFileReader::readFileType(std::string& line){
+    std::string unformated="";
+    std::string temp;
+    std::istringstream ss(line);
     while(getline(ss,temp,',')){
+        if(temp[0]=='"'){ //removes quatiations
+            
+            temp=temp.substr(1,(temp.length()-1) -1); // temp.length()-1 is the last index
+            //std::cout<<temp<<std::endl;
+        }
         unformated+=temp;
         unformated+=" ";
-        c++;
-//        std::cout<<"count: "<<c<<std::endl;
-//        std::cout<<unformated<<std::endl;
-//        std::cout<<temp<<std::endl;
+        
      
     }
     return unformated;
 }
-
-
-//template <typename type>
-//void csvFileReader::readFile(std::vector<type>& list){
-//    std::string rad;
-//    if(fileOpened = true){
-//        while(getline(file,rad)){
-//            std::cout<<rad<<std::endl;
-//        }
-//    }
-//}
-//void csvFileReader::readFile(std::vector<entity>& list){
-//    std::string rad;
-//    std::cout<<"Hejsan"<<std::endl;
-//    if(fileOpened = true){
-//        while(getline(file,rad)){
-//            std::cout<<rad<<std::endl;
-//        }
-//    }
-//}
+#endif

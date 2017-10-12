@@ -22,7 +22,10 @@ class aeroForm : public QMainWindow {
     Q_OBJECT
 public:
     aeroForm();
-void connectToGUI(aeroGUI* gui){this->gui = gui;}
+    void connectToGUI(aeroGUI* gui){this->gui = gui;}
+    void resetTitle();
+    std::string getPath();
+    
 public slots:
     void textChanged(const QString& text);
     void browseButtonClicked();

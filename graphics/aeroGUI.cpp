@@ -13,15 +13,17 @@ aeroGUI::aeroGUI(AeroUber* aero):aero(aero){
 
 
 void aeroGUI::openGUI(){
+        gui.resetTitle();
         gui.setEnabled(true);
         gui.show();
 }
 
 std::string aeroGUI::getPath(){
+    requestPath = gui.getPath();
     return requestPath;
 }
 
 void aeroGUI::start(){
-    gui.setEnabled(!gui.isEnabled());
+    gui.setEnabled(false);
     aero->startScheduler();
 }
