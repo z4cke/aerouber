@@ -6,24 +6,36 @@
 
 #include "flightScheduler.h"
 #include <math.h>
-#include <vector>
-#include <string>
 
 void FlightScheduler::startScheduleFlights
-(std::vector<Passenger> Passengers, std::vector<aircraft> Aircraft, std::vector<Airport> Airports){
+(std::vector<Passenger> &Passengerlist, std::vector<aircraft> &Aircraft, std::vector<Airport> &Airports){
+    
+    
+    Flight Simon(time2(3600), time2(7200), "ESSA", "ESGN", 123, 1);
+    scheduledFlights.emplace_back(time2(3600), time2(7200), "ESSA", "ESGN", 123, 1);
+    
+    
+#if 0
+    //Första delen av algoritmen (Assigna alla passagerare till flights)
+    int flightnumber = 1;
+    std::vector<Flight> Flightlist;             //lista med flyg.
+    std::vector<Passenger> finishedPassengers;  //Passagerare som fått flyg tilldelat
+    
+
+
     
     /* FÖRSTA DELEN AV ALGORITMEN (ASSIGNA ALLA PASSAGERARE TILL FLIGHTS)*/
     int flightnumber = 1;
     std::vector<Flight> Flightlist;
     std::vector<Passenger> finishedPassengers; //Lista för passagerare som fått ett flyg tilldelat till sig.
-    while(!Passenger.empty()){
-        Passenger tempPassenger = Passengers.back();  //Ta ut passagerare ur vektorn..
-        Passengers.pop_back()
+    while(!Passengerlist.empty()){
+        Passenger tempPassenger = Passengerlist.back();  //Ta ut passagerare ur vektorn..
+        Passengerlist.pop_back();
         std::string origin = tempPassenger.getCurrentLocation();
         std::string destination = tempPassenger.getDestination();
         std::string RTA = tempPassenger.getRTA();
         int i;
-        for(i = 0; i < Flightlist.size();i++){ //Kollar om flyg redan finns
+       /* for(i = 0; i < Flightlist.size();i++){ //Kollar om flyg redan finns
             std::string forigin = Flightlist[i].departureAirport;
             std::string fdestination = Flightlist[i].arrivalAirport;
             if(forigin == origin && fdestination == destination){ //Om flyg med samma origin/destination finns-
@@ -31,9 +43,9 @@ void FlightScheduler::startScheduleFlights
                 Flightlist[i].PassengerCount = Flightlist[i].PassengerCount + 1; //addera passagerarcount
                 finishedPassengers.push_back(tempPassenger); //Pusha passagerare in i färdiga passagerar vektorn
             }
-        }
-        y = i + 1;
-        if(y = Flightlist.size()){ //Om flyg med origin/destination inte finns
+        }*/
+        int y = i + 1;
+      /*  if(y = Flightlist.size()){ //Om flyg med origin/destination inte finns
 
             
             Flight newFlight(NULL,NULL,origin,destination,flightnumber,1); //Skapandet av ny flight
@@ -43,7 +55,7 @@ void FlightScheduler::startScheduleFlights
                 Flightlist.push_back(newFlight);
                 flightnumber++;
             
-        }
+        }*/
     }
         
     /* ANDRA DELEN AV ALGORITMEN (TILLDELA FLYGPLAN TILL VARJE FLIGHT)*/
@@ -52,13 +64,14 @@ void FlightScheduler::startScheduleFlights
     
     while (!Flightlist.empty()){  //DENNA LOOP SÄTTER IN FLIGHTSEN TILL EN NY VEKTOR I STORLEKSORDNING.
         int highestCount = 0;
+        int mostpassengers;
         int vectorposition;
-         for(i = 0;i < Flightlist.size(); i++){
+         /*for(i = 0;i < Flightlist.size(); i++){
             if(Flightlist[i].PassengerCount > highestCount){
                 mostpassengers = Flightlist[i].PassengerCount;
                 vectorposition = i;
             }
-        }
+        }*/
         Flight tempholder = Flightlist[vectorposition];
         Flightlist.erase(Flightlist.begin()+i-1);
         FlightlistSorted.push_back(tempholder);
@@ -89,7 +102,7 @@ void FlightScheduler::startScheduleFlights
         while(Airports[z].getICAO() != FlightlistSorted[i].arrivalAirport){
             z++;
         }
-        double distance = calculateDistance(&Airports[y],)
+//        double distance = calculateDistance(&Airports[y],)
             
         
     }
@@ -97,14 +110,14 @@ void FlightScheduler::startScheduleFlights
         /* TREDJE DELEN AV ALGORITMEN (TILLDELA DEPARTURETIME OCH ARRIVALTIME) */
 
 
-        
+#endif
 }
 
 double FlightScheduler::calculateDistance(Airport &Origin, Airport &Destination, aircraft &Aircraft){
-    double A1 = (Origin->getLat() * M_PI)/180;
-    double B1 = (Origin->getLon() * M_PI)/180;
-    double A2 = (Destination->getLat() * M_PI)/180;
-    double B2 = (Destination->getLon() * M_PI)/180;
+    double A1 = (Origin.getLat() * M_PI)/180;
+    double B1 = (Origin.getLon() * M_PI)/180;
+    double A2 = (Destination.getLat() * M_PI)/180;
+    double B2 = (Destination.getLon() * M_PI)/180;
        double rad = 637100 + Aircraft.getFleet().getHeight();
     
     double deltaA = A1 - A2;
@@ -125,12 +138,14 @@ double FlightScheduler::calculateDistance(Airport &Origin, Airport &Destination,
     return distance; //in kilometers
 }
 
-time FlightScheduler::calculateTime (double distance, aircraft &Aircraft){ 
+
+/*
+time2 FlightScheduler::calculateTime (double distance, aircraft &Aircraft){ 
     int speed = Aircraft.getFleet().getSpeed();
     distance = distance / 1000; //Conversion to from M to KM
     double timmar = speed / distance;
     double sekunder = timmar*3600;
-    time hoho(sekunder); //<-- Constructor
+    time2 hoho(sekunder); //<-- Constructor
     
     return hoho;
     
@@ -149,3 +164,4 @@ time FlightScheduler::calculateTime (double distance, aircraft &Aircraft){
                 
             
     }
+*/
