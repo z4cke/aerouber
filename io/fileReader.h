@@ -11,6 +11,10 @@
 #include <vector>
 #include <string>
 #include <iostream>
+#include "../flightScheduling/airport.h"
+#include "../flightScheduling/fleet.h"
+#include "../flightScheduling/aircraft.h"
+#include "../flightScheduling/passenger.h"
 
 /*
  * fileReader is a object that stores the path, stream and a bool var for the
@@ -41,6 +45,58 @@ public:
             while(getline(file, rad)){
                 //std::cout<<readFileType(rad)<<std::endl;
                 list.emplace_back(readFileType(rad));
+            }
+        }
+    }
+    /*
+    void readFile(std::vector<fleet>& list){
+        std::string rad;
+        if(fileOpened == true){
+            while(getline(file, rad)){
+                time2 dT = readFileType(rad);time2 aT, std::string dA, std::string aA, int ID, int PassengerCount
+                
+                int id = std::stoi(readFileType(rad));
+                std::string name = readFileType(rad);
+                
+                list.emplace_back(id, name, city, country, iata, icao, lat, lon,
+                        alt, zone, dst, tz, type, source);
+                
+                
+            }
+        }
+    }*/
+    
+    void readFile(std::vector<Airport>& list){
+        std::string rad;
+        if(fileOpened == true){
+            while(getline(file, rad)){
+                int id = std::stoi(readFileType(rad));
+                std::string name = readFileType(rad);
+                std::string city = readFileType(rad);
+                std::string country = readFileType(rad);
+                std::string iata = readFileType(rad);
+                std::string icao = readFileType(rad);
+                double lat = std::stod(readFileType(rad));
+                double lon = std::stod(readFileType(rad));
+                int alt = std::stoi(readFileType(rad));
+                int zone = std::stoi(readFileType(rad));
+                char dst = readFileType(rad)[0];
+                std::string tz = readFileType(rad);
+                
+                std::string readType = readFileType(rad);
+                Airport::airportType type;
+                if(readType == "airport")
+                    type = Airport::airportType::airport;
+                else
+                    type = Airport::airportType::U;
+                
+                
+                std::string source = readFileType(rad);
+                
+                list.emplace_back(id, name, city, country, iata, icao, lat, lon,
+                        alt, zone, dst, tz, type, source);
+                
+                
             }
         }
     }

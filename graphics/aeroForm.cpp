@@ -44,9 +44,18 @@ void aeroForm::browseButtonClicked(){
         widget.pathSection->setText(path);
 }
 
+ void aeroForm::resetTitle(){
+     setWindowTitle(QApplication::translate("aeroForm", "AeroUber - a flight scheduling software", 0, QApplication::UnicodeUTF8));
+ }
+
+std::string aeroForm::getPath(){
+    return widget.pathSection->text().trimmed().toStdString();
+}
+
 
 void aeroForm::start_clicked(){
     setWindowTitle(QApplication::translate("aeroForm", "AeroUber - a flight scheduling software - calculating", 0, QApplication::UnicodeUTF8));
     setEnabled(false);
     gui->start();
+    
 }

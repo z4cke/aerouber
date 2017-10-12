@@ -28,6 +28,7 @@ void AeroUber::startScheduler(){
     writer.openFile(outputFile);
     //writer.writeFile(scheduler.getFlights());
     writer.closeFile();
+    gui.openGUI();
     
 }
 
@@ -38,7 +39,7 @@ void AeroUber::loadFiles(){
     reader.openFile(airportFile);
     reader.readFile(airportList);
     reader.closeFile();
-    
+#if 0
     // reads fleet file and fills the aircraft vector.
     reader.openFile(fleetFile);
     reader.readFile(fleetList);
@@ -48,6 +49,7 @@ void AeroUber::loadFiles(){
     reader.openFile(aircraftFile);
     reader.readFile(aircraftList);
     reader.closeFile();
+#endif
 }
 
 void AeroUber::loadPassengerRequests(){
