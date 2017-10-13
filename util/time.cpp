@@ -33,6 +33,21 @@ time2::time2(std::string line){
     m=std::atoi(line.substr(14,2).c_str());
 }
 
+ bool operator>(const time2& tid1,const time2& tid2){
+    int tid1s = tid1.h * 3600 + tid1.m *60 + tid1.s;
+    int tid2s = tid2.h * 3600 + tid2.m *60 + tid2.s;
+    return (tid1s>tid2s);
+ }
+ 
+ time2 operator-(const time2& tid1,const time2& tid2){
+    int tid1s = tid1.h * 3600 + tid1.m *60 + tid1.s;
+    int tid2s = tid2.h * 3600 + tid2.m *60 + tid2.s;
+    tid1s = tid1s - tid2s;
+    
+    time2 differans(tid1s);
+    return differans;
+ }
+
 time2 time2::CompareTime(time2 &one){
     time2 comparedtime(0);
     
@@ -60,6 +75,10 @@ void time2::setHour(int hh){
 
 void time2::setMin(int mm){
     m = mm;
+}
+
+std::string time2::getTimeAsString(){
+    return std::to_string(h)+"."+std::to_string(m)+"."+std::to_string(s);
 }
 
 
