@@ -27,18 +27,7 @@ public:
     
     
 //Non-default constructor
-aircraft(std::string losID, std::string losModelos, int losSeatos, std::string CL);
-
-
-    //Destructor
-    ~aircraft();
-    
-//Copy constructor
-aircraft(const aircraft& other);
-    
-//Copy-assignment constructor
-aircraft& operator=(const aircraft& other);
-    
+aircraft(std::string ID, std::string Model, int Seats, std::string currentLocation);
 
     
     std::string getID();
@@ -47,7 +36,7 @@ aircraft& operator=(const aircraft& other);
     std::string getCurrentLocation();
     fleet& getFleet();
     
-    void connectAircraftToFleet(std::vector<aircraft> &aircrafts, std::vector<fleet> &fleet);
+    static void connectAircraftToFleet(std::vector<aircraft> &aircrafts, std::vector<fleet> &fleetList);
     
 };
 

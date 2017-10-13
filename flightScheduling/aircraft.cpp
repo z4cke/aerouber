@@ -5,37 +5,14 @@
  */
 
 #include "aircraft.h"
-//Default constructor
-/*aircraft::aircraft(){
-    ID = NULL;
-    Model = NULL;
-    Seats = NULL;
-    CurrentLocation = NULL;
-    AircraftModel = NULL;
-}*/
     
 //Non-default constructor
-aircraft::aircraft(std::string i, std::string m, int s, std::string c){
-    ID = i;
-    Model = m;
-    Seats = s;
-    CurrentLocation = c;
+aircraft::aircraft(std::string id, std::string model, int seats, std::string cl){
+    ID = id;
+    Model = model;
+    Seats = seats;
+    CurrentLocation = cl;
     AircraftModel = nullptr;
-}
-    
-//Copy constructor
-aircraft::aircraft(const aircraft& other){
-        
-}
-    
-//Copy-assignment constructor
-aircraft& aircraft::operator=(const aircraft& other){
-    return *this;
-}
-    
-//Destructor
-aircraft::~aircraft(){
-    
 }
 
 std::string aircraft::getID(){return ID;}
@@ -43,6 +20,17 @@ std::string aircraft::getModel(){return Model;}
 int aircraft::getSeats(){return Seats;}
 std::string aircraft::getCurrentLocation(){return CurrentLocation;}
     
-fleet& aircraft::getFleet(){}
+fleet& aircraft::getFleet(){
+    return *AircraftModel;
+}
     
-void aircraft::connectAircraftToFleet(std::vector<aircraft> &aircrafts, std::vector<fleet> &fleet){}
+void aircraft::connectAircraftToFleet(std::vector<aircraft> &aircrafts, std::vector<fleet> &fleetList){
+    for(aircraft& plane : aircrafts){
+        for(fleet& planeType : fleetList){
+            if(plane.getModel() == planeType.getAircraftModel()){
+                plane.AircraftModel = &planeType;
+                break;
+            }
+        }
+    }
+}
