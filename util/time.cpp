@@ -35,7 +35,7 @@ time2::time2(std::string line){
  bool operator>(const time2& tid1,const time2& tid2){
     int tid1s = tid1.h * 3600 + tid1.m *60 + tid1.s;
     int tid2s = tid2.h * 3600 + tid2.m *60 + tid2.s;
-    return (tid1>tid2);
+    return (tid1s>tid2s);
  }
  
  time2 operator-(const time2& tid1,const time2& tid2){

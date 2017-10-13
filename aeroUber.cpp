@@ -4,9 +4,9 @@
  * and open the template in the editor.
  */
 
-#define airportFile "airport.csv"
+#define airportFile "airport-test.csv"
 #define fleetFile "fleet.csv"
-#define aircraftFile "aircraft.csv"
+#define aircraftFile "aircraft-test.csv"
 #define outputFile "output.csv"
 
 
@@ -35,7 +35,7 @@ void AeroUber::startScheduler(){
 
 void AeroUber::loadFiles(){
     csvFileReader reader;
-   /*
+   
     // reads airport file and fills the airport vector.
     reader.openFile(airportFile);
     reader.readFile(airportList);
@@ -50,7 +50,9 @@ void AeroUber::loadFiles(){
     reader.openFile(aircraftFile);
     reader.readFile(aircraftList);
     reader.closeFile();
-*/
+    
+    aircraft::connectAircraftToFleet(aircraftList, fleetList);
+
 }
 
 void AeroUber::loadPassengerRequests(){

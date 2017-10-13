@@ -37,7 +37,7 @@ aircraft(std::string losID, std::string losModelos, int losSeatos, std::string C
     std::string getCurrentLocation();
     fleet& getFleet();
     
-    void connectAircraftToFleet(std::vector<aircraft> &aircrafts, std::vector<fleet> &fleet);
+    static void connectAircraftToFleet(std::vector<aircraft> &aircrafts, std::vector<fleet> &fleetList);
     
 };
 

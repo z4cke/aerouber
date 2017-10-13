@@ -17,7 +17,7 @@ std::string csvFileReader::readFileType(std::string& line){
     std::string temp;
     std::istringstream ss(line);
     
-    std::cout <<"Orginal > "<< line << std::endl;
+    //std::cout <<"Orginal > "<< line << std::endl;
     if(getline(ss,temp,',')){
         if(temp[0]=='"'){ //removes quatiations
             
@@ -33,8 +33,8 @@ std::string csvFileReader::readFileType(std::string& line){
         
         line = line.substr(startSub, subLength);
     }
-    std::cout <<"Klipp > "<< unformated << std::endl;
-    std::cout <<"Ny > "<< line << std::endl;
+    //std::cout <<"Klipp > "<< unformated << std::endl;
+    //std::cout <<"Ny > "<< line << std::endl;
     return unformated;
 }
 #else

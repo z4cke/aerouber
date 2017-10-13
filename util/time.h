@@ -30,7 +30,9 @@ public:
     time2 setTime(int hour, int min, int sec);
     
     time2 CompareTime(time2& tajm);
-	
+    
+    friend bool operator>(const time2& tid1,const time2& tid2);
+    friend time2 operator-(const time2& tid1,const time2& tid2);
 /**
 *Returns hour int
 */

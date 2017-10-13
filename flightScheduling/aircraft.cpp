@@ -32,4 +32,13 @@ std::string aircraft::getCurrentLocation(){return CurrentLocation;}
     
 fleet& aircraft::getFleet(){}
     
-void aircraft::connectAircraftToFleet(std::vector<aircraft> &aircrafts, std::vector<fleet> &fleet){}
+void aircraft::connectAircraftToFleet(std::vector<aircraft> &aircrafts, std::vector<fleet> &fleetList){
+    for(aircraft& plane : aircrafts){
+            for(fleet& planeType : fleetList){
+                if(plane.getModel() == planeType.getAircraftModel()){
+                    plane.AircraftModel = &planeType;
+                    break;
+                }
+            }
+    }
+}

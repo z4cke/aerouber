@@ -6,29 +6,36 @@
 
 
 #include "Flight.h"
+#include "airport.h"
 
 
 
 
 
-Flight::Flight(){
-    FlightNumber = 0;
-    PassengerCount = 0;/*
-    arrivalAirport;
-    arrivalTime;
-    departureAirport;
-    departureTime;
-    */
-}
+
         
 //Non-default constructor
-Flight::Flight(time2 aT, time2 dT, std::string dA, std::string aA, int ID, int PassengerCount,aircraft *AAircraft){
+Flight::Flight(time2 aT, time2 dT, std::string dA, std::string aA, int ID, std::vector<Airport> &Airports){
     FlightNumber = ID;
-    this->PassengerCount = PassengerCount;
-    arrivalAirport = aA;
+    arrivalAirportCode = aA;
     arrivalTime = aT;
-    departureAirport = dA;
+    departureAirportCode = dA;
     departureTime = dT;
+    departureAirport = nullptr;
+    arrivalAirport = nullptr;
+    
+    //Connect to airport
+    for(Airport &a : Airports){
+        if(departureAirport == nullptr){
+            if(a.getICAO() == departureAirportCode)
+                departureAirport = &a;
+        }
+        if(arrivalAirport == nullptr){
+            if(a.getICAO() == arrivalAirportCode)
+                arrivalAirport = &a;
+        }
+    }
+    
     Aircraft = nullptr;
 }
 
@@ -45,21 +52,31 @@ std::string& operator <<(std::string &s, const Flight& flight ){
 
 
 
-   std::string Flight::getdepartureAirport(){
-       return departureAirport;
+   std::string Flight::getdepartureAirportCode(){
+       return departureAirportCode;
    }
    
    
    
-   std::string Flight::getarrivalAirport(){
-       return arrivalAirport;
+   std::string Flight::getarrivalAirportCode(){
+       return arrivalAirportCode;
    }
+   
+   Airport& Flight::getdepartureAirport(){
+       return *departureAirport;
+   }
+   Airport& Flight::getarrivalAirport(){
+       return *arrivalAirport;
+   }
+        
+   
+   
    int Flight::getID(){
        return FlightNumber;
    }
    
-   int Flight::getPassengerCount(){
-       return PassengerCount;
+   int Flight::getPassengerCount() const{
+       return Passengerlist.size();
    }
    
    
@@ -67,9 +84,28 @@ std::string& operator <<(std::string &s, const Flight& flight ){
         FlightNumber = ID;
    }
    
-   void Flight::setPassengerCount(int Count){
-       PassengerCount = Count;
+   void Flight::addPassenger(Passenger *newPassenger){
+       Passengerlist.push_back(newPassenger);
    }
+   
+   void Flight::removeExcessPassenger(){
+       while(getPassengerCount() > Aircraft->getSeats()){
+           Passengerlist.pop_back();//removes last passenger in the list.
+       }
+   }
+   
+   std::vector<Passenger*>& Flight::getPassengerlist(){
+       return Passengerlist;
+   }
+   
+   
+  void Flight::setArrivalTime(time2 tid){
+        arrivalTime = tid;
+  }
+  void Flight::setDepartureTime(time2 tid){
+        departureTime = tid;
+  }
+
 
 
 

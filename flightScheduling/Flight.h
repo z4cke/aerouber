@@ -16,37 +16,60 @@
 
 #include "../util/time.h"
 #include "aircraft.h"
+#include "passenger.h"'
+#include "airport.h"
 
-#ifdef TIME_H
+#include <vector>
 #include <iostream>
 #include <iomanip>
 #include <string.h>
 
 class Flight {
+    
+public:
+     aircraft *Aircraft;
 private:
 	time2 departureTime;
 	time2 arrivalTime;
-	std::string departureAirport;
-	std::string arrivalAirport;
+	std::string departureAirportCode;
+	std::string arrivalAirportCode;
+        Airport * departureAirport;
+        Airport * arrivalAirport;
 	int FlightNumber;
-	int PassengerCount;
-        aircraft *Aircraft;
+        
+        std::vector<Passenger*> Passengerlist;
         
 public:
     
-        std::string getdepartureAirport();
-        std::string getarrivalAirport();
+       
+        
+        
+        bool operator< (const Flight &other) const {
+            return getPassengerCount() < other.getPassengerCount();
+        }
+        
+        std::string getdepartureAirportCode();
+        std::string getarrivalAirportCode();
+        
+        Airport& getdepartureAirport();
+        Airport& getarrivalAirport();
+        
+        std::vector<Passenger*>& getPassengerlist();
+        
+        void setArrivalTime(time2 tid);
+        void setDepartureTime(time2 tid);
+        
+        
         int         getID();
-        int         getPassengerCount();
-        void         setID(int ID);
-        void         setPassengerCount(int Count);
+        int         getPassengerCount() const;
+        void        setID(int ID);
+        void        addPassenger(Passenger *newPassenger);
         
-	
-        //Default constructor
-        Flight();
+        void removeExcessPassenger();
         
+
         //Non-default constructor
-        Flight(time2 dT, time2 aT, std::string dA, std::string aA, int ID, int PassengerCount,aircraft *Aircraft);
+        Flight(time2 dT, time2 aT, std::string dA, std::string aA, int ID, std::vector<Airport> &Airports);
         
         std::string PrintFlight() const;
         
@@ -54,4 +77,4 @@ public:
 };
 
 #endif /* FLIGHT_H */
-#endif
+
