@@ -7,6 +7,8 @@
 #include "flightScheduler.h"
 #include <cmath>
 #include <algorithm>
+#include <iostream>
+#include <limits>
 
 #define EARTH_RADIUS 6371.0
 
@@ -40,13 +42,15 @@ void FlightScheduler::startScheduleFlights
     
     for(Flight& f : scheduledFlights){
         for(aircraft &a : aircraftList){
+            
             if(a.getCurrentLocation() == f.getdepartureAirportCode()){ 
-                if(f.Aircraft == nullptr)
+                std::cout <<"ID: " <<f.getPassengerlist()[0]->getID() << std::endl;
+                if(f.Aircraft == nullptr){
                     if(calculateDistance(f.getdepartureAirport(),f.getarrivalAirport(),a) < (double)a.getFleet().getMaxRange()){
                         f.Aircraft = &a;
                     }
-                else{
-                    if(f.Aircraft->getSeats() < a.getSeats()){
+                }else{
+                    if(f.Aircraft->getSeats() <= a.getSeats()){
                         if(calculateDistance(f.getdepartureAirport(),f.getarrivalAirport(),a) < (double)a.getFleet().getMaxRange()){
                             f.Aircraft = &a;  
                         }
@@ -84,6 +88,8 @@ double hav(double radians){
 }
 
 double FlightScheduler::calculateDistance(Airport &Origin, Airport &Destination, aircraft &currAircraft){
+    if(&Origin == nullptr || &Destination == nullptr || &currAircraft == nullptr)
+        return std::numeric_limits<double>::max();
     double originLat = Origin.getLat();
     double originLon = Origin.getLon();
     double destLat = Destination.getLat();

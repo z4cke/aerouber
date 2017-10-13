@@ -7,22 +7,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/EDUNET.ORU.SE/kinchh161/NetBeansProjects/aerouber/io/csvFileWriter.cpp</file>
-            <file>file:/home/EDUNET.ORU.SE/kinchh161/NetBeansProjects/aerouber/output.csv</file>
-            <file>file:/home/EDUNET.ORU.SE/kinchh161/NetBeansProjects/aerouber/flightScheduling/passenger.h</file>
-            <file>file:/home/EDUNET.ORU.SE/kinchh161/NetBeansProjects/aerouber/util/time.cpp</file>
-            <file>file:/home/EDUNET.ORU.SE/kinchh161/NetBeansProjects/aerouber/flightScheduling/airport.cpp</file>
-            <file>file:/home/EDUNET.ORU.SE/kinchh161/NetBeansProjects/aerouber/io/fileWriter.h</file>
-            <file>file:/home/EDUNET.ORU.SE/kinchh161/NetBeansProjects/aerouber/flightScheduling/aircraft.h</file>
-            <file>file:/home/EDUNET.ORU.SE/kinchh161/NetBeansProjects/aerouber/aeroUber.cpp</file>
             <file>file:/home/EDUNET.ORU.SE/kinchh161/NetBeansProjects/aerouber/flightScheduling/Flight.cpp</file>
+            <file>file:/home/EDUNET.ORU.SE/kinchh161/NetBeansProjects/aerouber/flightScheduling/airport.cpp</file>
             <file>file:/home/EDUNET.ORU.SE/kinchh161/NetBeansProjects/aerouber/flightScheduling/FlightScheduler.cpp</file>
-            <file>file:/home/EDUNET.ORU.SE/kinchh161/NetBeansProjects/aerouber/io/fileReader.h</file>
-            <file>file:/home/EDUNET.ORU.SE/kinchh161/NetBeansProjects/aerouber/flightScheduling/aircraft.cpp</file>
-            <file>file:/home/EDUNET.ORU.SE/kinchh161/NetBeansProjects/aerouber/flightScheduling/passenger.cpp</file>
             <file>file:/home/EDUNET.ORU.SE/kinchh161/NetBeansProjects/aerouber/main.cpp</file>
             <file>file:/home/EDUNET.ORU.SE/kinchh161/NetBeansProjects/aerouber/flightScheduling/Flight.h</file>
-            <file>file:/home/EDUNET.ORU.SE/kinchh161/NetBeansProjects/aerouber/graphics/aeroGUI.cpp</file>
         </group>
     </open-files>
 </project-private>
