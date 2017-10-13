@@ -5,6 +5,7 @@
  */
 
 #include "time.h"
+#include <cstdlib>
 
 
 //Default constructor
