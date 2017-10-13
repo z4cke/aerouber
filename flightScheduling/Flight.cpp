@@ -26,6 +26,10 @@ Flight::Flight(time2 aT, time2 dT, std::string dA, std::string aA, int ID, std::
     
     //Connect to airport
     for(Airport &a : Airports){
+        if(departureAirport != nullptr && arrivalAirport != nullptr)
+            break;
+        
+        
         if(departureAirport == nullptr){
             if(a.getICAO() == departureAirportCode)
                 departureAirport = &a;
@@ -85,7 +89,6 @@ std::string& operator <<(std::string &s, const Flight& flight ){
    }
    
    void Flight::addPassenger(Passenger *newPassenger){
-       newPassenger->addToFlight(this);
        Passengerlist.push_back(newPassenger);
    }
    
@@ -115,8 +118,18 @@ std::string& operator <<(std::string &s, const Flight& flight ){
   time2 Flight::getArrivalTime(){
       return arrivalTime;
   }
+  
+  void Flight::cancelFlight(){
+      while(getPassengerCount() > 0){
+           Passengerlist[Passengerlist.size()-1]->removeFromFlight();
+           Passengerlist.pop_back();//removes last passenger in the list.
+       }
+  }
 
-
+  void Flight::confirmFlight(){
+      for(Passenger *p : Passengerlist)
+        p->addToFlight(this);
+  }
 
 
 

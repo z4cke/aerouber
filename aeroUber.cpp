@@ -4,11 +4,19 @@
  * and open the template in the editor.
  */
 
-#define airportFile "airport-test.csv"
-#define fleetFile "fleet.csv"
-#define aircraftFile "aircraft-test.csv"
-#define outputFile "output.csv"
+//#define debugFiles
 
+#ifdef debugFiles
+    #define airportFile "airport-test.csv"
+    #define fleetFile "fleet.csv"
+    #define aircraftFile "aircraft-test.csv"
+    #define outputFile "output.csv"
+#else
+    #define airportFile "airport.csv"
+    #define fleetFile "fleet.csv"
+    #define aircraftFile "aircraft.csv"
+    #define outputFile "output.csv"
+#endif
 
 #include "aeroUber.h"
 #include <string>

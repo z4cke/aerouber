@@ -30,7 +30,7 @@ void FlightScheduler::startScheduleFlights
         
         if(!flightexist){ //Om flight inte finns.
             scheduledFlights.emplace_back(0, 0, p.getCurrentLocation(), p.getDestination(), Flightnumber, Airports);
-            scheduledFlights[scheduledFlights.size()-1].addPassenger(&p);
+            scheduledFlights[scheduledFlights.size() - 1].addPassenger(&p);
             Flightnumber++;
         }
     }
@@ -67,10 +67,14 @@ void FlightScheduler::startScheduleFlights
                     EarliestRTA = RTA;
                 }
             }
-        f.setArrivalTime(EarliestRTA);
-        time2 Flighttime = calculateTime(calculateDistance(f.getdepartureAirport(),f.getarrivalAirport(),*f.Aircraft),*f.Aircraft);
-        f.setDepartureTime(EarliestRTA - Flighttime);
-        }   
+            f.setArrivalTime(EarliestRTA);
+            time2 Flighttime = calculateTime(calculateDistance(f.getdepartureAirport(),f.getarrivalAirport(),*f.Aircraft),*f.Aircraft);
+            f.setDepartureTime(EarliestRTA - Flighttime);
+            f.confirmFlight();
+        }
+        else{
+            f.cancelFlight();
+        }
     } 
 } //Funktionens slut
 

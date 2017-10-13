@@ -45,7 +45,7 @@ public:
         
         
         bool operator< (const Flight &other) const {
-            return getPassengerCount() < other.getPassengerCount();
+            return getPassengerCount() > other.getPassengerCount();
         }
         
         std::string getdepartureAirportCode();
@@ -77,6 +77,10 @@ public:
         std::string PrintFlight() const;
         
         friend std::string& operator <<(std::string &s, const Flight& flight );
+        
+        void cancelFlight();
+        
+        void confirmFlight();
 };
 
 #endif /* FLIGHT_H */
