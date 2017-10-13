@@ -27,7 +27,8 @@ public:
     
     
 //Non-default constructor
-aircraft(std::string ID, std::string Model, int Seats, std::string currentLocation);
+aircraft(std::string losID, std::string losModelos, int losSeatos, std::string CL);
+   
 
     
     std::string getID();

@@ -5,15 +5,25 @@
  */
 
 #include "aircraft.h"
+//Default constructor
+/*aircraft::aircraft(){
+    ID = NULL;
+    Model = NULL;
+    Seats = NULL;
+    CurrentLocation = NULL;
+    AircraftModel = NULL;
+}*/
     
 //Non-default constructor
-aircraft::aircraft(std::string id, std::string model, int seats, std::string cl){
-    ID = id;
-    Model = model;
-    Seats = seats;
-    CurrentLocation = cl;
+aircraft::aircraft(std::string i, std::string m, int s, std::string c){
+    ID = i;
+    Model = m;
+    Seats = s;
+    CurrentLocation = c;
     AircraftModel = nullptr;
 }
+    
+
 
 std::string aircraft::getID(){return ID;}
 std::string aircraft::getModel(){return Model;}
@@ -26,11 +36,11 @@ fleet& aircraft::getFleet(){
     
 void aircraft::connectAircraftToFleet(std::vector<aircraft> &aircrafts, std::vector<fleet> &fleetList){
     for(aircraft& plane : aircrafts){
-        for(fleet& planeType : fleetList){
-            if(plane.getModel() == planeType.getAircraftModel()){
-                plane.AircraftModel = &planeType;
-                break;
+            for(fleet& planeType : fleetList){
+                if(plane.getModel() == planeType.getAircraftModel()){
+                    plane.AircraftModel = &planeType;
+                    break;
+                }
             }
-        }
     }
 }
