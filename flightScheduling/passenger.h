@@ -16,15 +16,19 @@
 #include <sstream>
 #include <iostream>
 #include <string>
+
+class Flight;
+
 class Passenger {
 private:
     int ID;
     std::string Destination;
     std::string currentLocation;
     std::string RTA;
+    Flight* bookedOnFlight;
 public:
-    Passenger(int ID, std::string Destination, std::string currentLocation, std::string RTA):ID(ID), Destination(Destination), currentLocation(currentLocation), RTA(RTA){
-    
+    Passenger(int ID, std::string Destination, std::string currentLocation, std::string RTA):ID(ID), Destination(Destination), currentLocation(currentLocation), RTA(RTA), bookedOnFlight(nullptr){
+        
     }
     
     /**
@@ -52,6 +56,12 @@ public:
     std::string getRTA();
     
     void setID(int flightID);
+    
+    void addToFlight(Flight* newFlight);
+    
+    void removeFromFlight();
+    
+    friend std::string& operator <<(std::string &s, Passenger& passenger);
 };
 
 #endif /* PASSENGER_H */

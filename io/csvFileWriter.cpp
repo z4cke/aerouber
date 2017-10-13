@@ -10,7 +10,7 @@ void csvFileWriter::printFileType(std::string& values){
     std::string word;
     
     //gets word by word, separated by a space.
-    while(iss >> word) {
+    while(getline(iss, word, ':')) {
         //print the value
         file << word;
         

@@ -6,6 +6,7 @@
 
 
 #include "passenger.h"
+#include "Flight.h"
 
 int Passenger::getID(){
     return ID;   
@@ -26,4 +27,25 @@ std::string Passenger::getRTA(){
 void Passenger::setID(int flightID){
     ID = flightID;
     
+}
+
+void Passenger::addToFlight(Flight* newFlight){
+    bookedOnFlight = newFlight;
+}
+    
+void Passenger::removeFromFlight(){
+    bookedOnFlight = nullptr;
+}
+
+std::string& operator <<(std::string &s, Passenger& passenger ){
+    s = std::to_string(passenger.getID()) + ":";
+    s += "file:";
+    Flight* f = passenger.bookedOnFlight;
+    s += passenger.bookedOnFlight->getdepartureAirportCode() + ":";
+    
+    
+    s += passenger.bookedOnFlight->getDepartureTime().getTimeAsString()+":";
+    s += passenger.bookedOnFlight->getarrivalAirportCode()+":";
+    s += passenger.bookedOnFlight->getArrivalTime().getTimeAsString();
+    return s;
 }

@@ -85,11 +85,13 @@ std::string& operator <<(std::string &s, const Flight& flight ){
    }
    
    void Flight::addPassenger(Passenger *newPassenger){
+       newPassenger->addToFlight(this);
        Passengerlist.push_back(newPassenger);
    }
    
    void Flight::removeExcessPassenger(){
        while(getPassengerCount() > Aircraft->getSeats()){
+           Passengerlist[Passengerlist.size()-1]->removeFromFlight();
            Passengerlist.pop_back();//removes last passenger in the list.
        }
    }
@@ -104,6 +106,14 @@ std::string& operator <<(std::string &s, const Flight& flight ){
   }
   void Flight::setDepartureTime(time2 tid){
         departureTime = tid;
+  }
+  
+  time2 Flight::getDepartureTime(){
+      return departureTime;
+  }
+  
+  time2 Flight::getArrivalTime(){
+      return arrivalTime;
   }
 
 

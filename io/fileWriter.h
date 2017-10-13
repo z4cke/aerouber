@@ -29,7 +29,7 @@ protected:
      * A pure virtual function.
      * Prints all values of one object to the file, with the formating for a certain type defined in subclass.
      * 
-     * @param values A string filled with all values that should be output for one object.
+     * @param values A string filled with all values, separated with a ':', that should be output for one object.
      */
     virtual void printFileType(std::string& values) = 0;
     
@@ -38,7 +38,7 @@ public:
     
     
     /**
-     * Prints all elements i a vector to a file of a certain type. The structure of a printing 
+     * Prints all elements in a vector to a file of a certain type. The structure of a printing 
      * for different file types has to be implemented in a subclass for the desired file output.
      * 
      * @param list A reference to a vector of elements that will be written to opened file.

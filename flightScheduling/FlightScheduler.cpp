@@ -8,8 +8,10 @@
 #include <cmath>
 #include <algorithm>
 
+#define EARTH_RADIUS 6371.0
+
 void FlightScheduler::startScheduleFlights
-(std::vector<Passenger> &Passengerlist, std::vector<aircraft> &Aircraft, std::vector<Airport> &Airports){
+(std::vector<Passenger> &Passengerlist, std::vector<aircraft> &aircraftList, std::vector<Airport> &Airports){
     
     int Flightnumber = 1;
     
@@ -27,9 +29,8 @@ void FlightScheduler::startScheduleFlights
             }
         
         if(!flightexist){ //Om flight inte finns.
-            Flight newFlights(0, 0, p.getCurrentLocation(), p.getDestination(), Flightnumber, Airports);
-            newFlights.addPassenger(&p);
-            scheduledFlights.push_back(newFlights);
+            scheduledFlights.emplace_back(0, 0, p.getCurrentLocation(), p.getDestination(), Flightnumber, Airports);
+            scheduledFlights[scheduledFlights.size()-1].addPassenger(&p);
             Flightnumber++;
         }
     }
@@ -37,9 +38,9 @@ void FlightScheduler::startScheduleFlights
     
     std::sort(scheduledFlights.begin(),scheduledFlights.end()); //Sortering av listan.
     
-    for(Flight &f : scheduledFlights){
-        for(aircraft &a : Aircraft){
-            if(a.getCurrentLocation() == f.getdepartureAirportCode()){ //För varje flygplan på platsen.
+    for(Flight& f : scheduledFlights){
+        for(aircraft &a : aircraftList){
+            if(a.getCurrentLocation() == f.getdepartureAirportCode()){ 
                 if(f.Aircraft == nullptr)
                     if(calculateDistance(f.getdepartureAirport(),f.getarrivalAirport(),a) < (double)a.getFleet().getMaxRange()){
                         f.Aircraft = &a;
@@ -54,6 +55,7 @@ void FlightScheduler::startScheduleFlights
             }
         }
     }
+    
     
     for(Flight &f : scheduledFlights){ //uträkning av tid;
         if(f.Aircraft != nullptr){
@@ -72,38 +74,40 @@ void FlightScheduler::startScheduleFlights
     } 
 } //Funktionens slut
 
+double hav(double radians){
+    double sine = std::sin(radians/2);
+    return sine*sine;
+}
 
-
-double FlightScheduler::calculateDistance(Airport &Origin, Airport &Destination, aircraft &Aircraft){
-    double A1 = (Origin.getLat() * M_PI)/180;
-    double B1 = (Origin.getLon() * M_PI)/180;
-    double A2 = (Destination.getLat() * M_PI)/180;
-    double B2 = (Destination.getLon() * M_PI)/180;
-    double rad = 637100 + Aircraft.getFleet().getHeight();
+double FlightScheduler::calculateDistance(Airport &Origin, Airport &Destination, aircraft &currAircraft){
+    double originLat = Origin.getLat();
+    double originLon = Origin.getLon();
+    double destLat = Destination.getLat();
+    double destLon = Destination.getLon();
     
-    double deltaA = A1 - A2;
-    double deltaB = B1 - B2;
+    double A1 = (originLat * M_PI)/180.0;
+    double B1 = (originLon * M_PI)/180.0;
+    double A2 = (destLat * M_PI)/180.0;
+    double B2 = (destLon * M_PI)/180.0;
     
-    if (deltaA < 0){
-        deltaA = -deltaA;
-    }
-    if (deltaB < 0){
-        deltaB = -deltaB;
-    }
+    double cruiseHeight = (double)currAircraft.getFleet().getHeight();
+    double rad = EARTH_RADIUS + cruiseHeight;
     
-    double a = sin(deltaA/2) * sin(deltaA/2) * cos(A1) * cos(A2) * sin(deltaB/2) * sin(deltaB/2);
-    double c = 2 * atan2(sqrt(a),sqrt(1-a));
-    double distance = rad * c/1000;
+    double deltaA = (A1 - A2);
+    double deltaB = (B1 - B2);
     
+    double a = hav(deltaA) + std::cos(A1) * std::cos(A2) * hav(deltaB);
+    double distance = 2 * rad * std::asin(std::sqrt(a));
     
     return distance; //in kilometers
 }
 
 
 
+
+
 time2 FlightScheduler::calculateTime (double distance, aircraft &Aircraft){ 
     int speed = Aircraft.getFleet().getSpeed();
-    distance = distance / 1000; //Conversion to from M to KM
     double timmar = speed / distance;
     double sekunder = timmar*3600;
     time2 hoho(sekunder); //<-- Constructor

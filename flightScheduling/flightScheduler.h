@@ -20,6 +20,7 @@
 #include "passenger.h"
 #include <vector>
 #include <string>
+#include <iostream>
 
 
 class FlightScheduler {
@@ -54,6 +55,7 @@ public:
         
         
 	std::vector<Flight>& getFlights() {
+            std::cout << "Getting scheduled Flights" << std::endl; 
 		return scheduledFlights;
 	}
         

@@ -59,11 +59,14 @@ public:
         void setArrivalTime(time2 tid);
         void setDepartureTime(time2 tid);
         
+        time2 getDepartureTime();
+        time2 getArrivalTime();
         
-        int         getID();
-        int         getPassengerCount() const;
-        void        setID(int ID);
-        void        addPassenger(Passenger *newPassenger);
+        
+        int getID();
+        int getPassengerCount() const;
+        void setID(int ID);
+        void addPassenger(Passenger *newPassenger);
         
         void removeExcessPassenger();
         

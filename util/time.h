@@ -48,6 +48,8 @@ public:
         void setMin(int hh);
         void setHour(int mm);
         
+        std::string getTimeAsString();
+        
         
 	
 

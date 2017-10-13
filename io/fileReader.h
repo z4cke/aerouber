@@ -16,6 +16,9 @@
 #include "../flightScheduling/aircraft.h"
 #include "../flightScheduling/passenger.h"
 
+
+#include <QString>
+
 /*
  * fileReader is a object that stores the path, stream and a bool var for the
  * state of the file. Virtual member function readFile that needs to be defined in the derived class
@@ -77,6 +80,8 @@ public:
                 std::string losModelos = readFileType(rad);
                 int losSeatos = std::stoi(readFileType(rad));
                 std::string CL = readFileType(rad);
+                //dirty quick fix//
+                if(CL.size() > 4)CL = CL.substr(0, 4);
                 list.emplace_back(losID, losModelos, losSeatos, CL);
             }
         }
@@ -108,8 +113,10 @@ public:
                 std::string country = readFileType(rad);
                 std::string iata = readFileType(rad);
                 std::string icao = readFileType(rad);
-                double lat = std::stod(readFileType(rad));
-                double lon = std::stod(readFileType(rad));
+                
+                
+                double lat = QString::fromStdString(readFileType(rad)).toDouble();// using QString because stod doesn't convert with decimals
+                double lon = QString::fromStdString(readFileType(rad)).toDouble();// using QString because stod doesn't convert with decimals
                 int alt = std::stoi(readFileType(rad));
                 int zone = std::stoi(readFileType(rad));
                 char dst = readFileType(rad)[0];

@@ -57,5 +57,4 @@ void aeroForm::start_clicked(){
     setWindowTitle(QApplication::translate("aeroForm", "AeroUber - a flight scheduling software - calculating", 0, QApplication::UnicodeUTF8));
     setEnabled(false);
     gui->start();
-    
 }

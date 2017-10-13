@@ -12,6 +12,7 @@
 
 #include "aeroUber.h"
 #include <string>
+#include <iostream>
 
 AeroUber::AeroUber():gui(this){
     
@@ -22,13 +23,21 @@ AeroUber::AeroUber():gui(this){
 
 void AeroUber::startScheduler(){
     loadPassengerRequests();
+    std::cout << "Starting calculator" << std::endl; 
     scheduler.startScheduleFlights(passengerList, aircraftList, airportList);
+    std::cout << "Calculation complete" << std::endl; 
     
+    
+    std::cout << "Starting output" << std::endl; 
     csvFileWriter writer;
     
     writer.openFile(outputFile);
-    writer.writeFile(scheduler.getFlights());
+    writer.writeFile(passengerList);//scheduler.getFlights());
     writer.closeFile();
+    std::cout << "Output complete" << std::endl; 
+    
+    
+    std::cout << "Return to gui" << std::endl; 
     gui.openGUI();
     
 }
@@ -61,7 +70,7 @@ void AeroUber::loadPassengerRequests(){
     reader.openFile(gui.getPath());
     reader.readFile(passengerList);
     reader.closeFile();
-
+    std::cout << "Passenger requests loaded." << std::endl; 
 }
 
 

@@ -30,7 +30,9 @@ std::string aircraft::getModel(){return Model;}
 int aircraft::getSeats(){return Seats;}
 std::string aircraft::getCurrentLocation(){return CurrentLocation;}
     
-fleet& aircraft::getFleet(){}
+fleet& aircraft::getFleet(){
+    return *AircraftModel;
+}
     
 void aircraft::connectAircraftToFleet(std::vector<aircraft> &aircrafts, std::vector<fleet> &fleetList){
     for(aircraft& plane : aircrafts){

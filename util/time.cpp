@@ -76,6 +76,10 @@ void time2::setMin(int mm){
     m = mm;
 }
 
+std::string time2::getTimeAsString(){
+    return std::to_string(h)+"."+std::to_string(m)+"."+std::to_string(s);
+}
+
 
 
 
