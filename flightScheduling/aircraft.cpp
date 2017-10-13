@@ -23,20 +23,7 @@ aircraft::aircraft(std::string i, std::string m, int s, std::string c){
     AircraftModel = nullptr;
 }
     
-//Copy constructor
-aircraft::aircraft(const aircraft& other){
-        
-}
-    
-//Copy-assignment constructor
-aircraft& aircraft::operator=(const aircraft& other){
-    return *this;
-}
-    
-//Destructor
-aircraft::~aircraft(){
-    
-}
+
 
 std::string aircraft::getID(){return ID;}
 std::string aircraft::getModel(){return Model;}
